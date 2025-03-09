@@ -1,4 +1,4 @@
-import { Setting } from "bns.adtap.network";
+import Setting from './setting';
 
 class Env extends Setting {
 

@@ -103,12 +103,26 @@ import AccountOptionsColumns from './columns/account-options';
 export { AccountOptionsColumns };
 
 import AccountPermsColumns from './columns/account-perms';
+export { AccountPermsColumns };
+
 import AccountRewardsColumns from './columns/account-rewards';
+export { AccountRewardsColumns };
+
 import AccountTypesColumns from './columns/account-types';
+export { AccountTypesColumns };
+
 import AccountValuesColumns from './columns/account-values';
+export { AccountValuesColumns };
+
 import AccountsColumns from './columns/accounts';
+export { AccountsColumns };
+
 import CategoriesColumns from './columns/categories';
+export { CategoriesColumns };
+
 import CategoryFieldsColumns from './columns/category-fields';
+export { CategoryFieldsColumns };
+
 import * from './columns/category-options';
 import * from './columns/category-values';
 import * from './columns/coins';
