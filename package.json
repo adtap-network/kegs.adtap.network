@@ -12,8 +12,10 @@
     },
     "files": [
       "dist",
+      "logs",
       "public",
-      "src"
+      "src",
+      "types"
     ],
     "devDependencies": {
       "@types/node": "^18.19.80",
