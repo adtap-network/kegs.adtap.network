@@ -22,4 +22,4 @@ export const AccountsSchema = Type.Object({
   account_updatedon: Type.Optional(Type.String())
 }, { $id: 'Account', additionalProperties: false });
 
-export type AccountType = Static<typeof AccountsSchema>;
+export type AccountsType = Static<typeof AccountsSchema>;

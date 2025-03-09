@@ -28,4 +28,4 @@ export const EntriesSchema = Type.Object(
   },
   { $id: 'entries', additionalProperties: false }
 )
-export type EntrieType = Static<typeof EntriesSchema>
+export type EntriesType = Static<typeof EntriesSchema>
