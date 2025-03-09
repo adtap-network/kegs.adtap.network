@@ -1,0 +1,32 @@
+/** stripe **/
+#stripe-onramp-root { display: flex; flex-direction: column; }
+#stripe-onramp-message { color: rgb(105, 115, 134); font-size: 16px; line-height: 20px; padding-top: 12px; text-align: center; }
+#stripe-onramp-element { min-width: min(450px, 60vw); margin-top: 24px; }
+#stripe-frmStripePayment { max-width: 300px; padding: 25px; border: #D0D0D0 1px solid; border-radius: 4px; }
+.stripe-test-data { margin-top: 40px; }
+.stripe-tutorial-table { border: #D0D0D0 1px solid; font-size: 0.8em; color: #4e4e4e; }
+.stripe-tutorial-table th { background: #efefef; padding: 12px; border-bottom: #e0e0e0 1px solid; text-align: left; }
+.stripe-tutorial-table td { padding: 12px; border-bottom: #D0D0D0 1px solid; }
+#stripe-frmStripePayment .field-row { margin-bottom: 20px; }
+#stripe-frmStripePayment div label { margin: 5px 0px 0px 5px; color: #49615d; width: auto; }
+.stripe-demoInputBox { padding: 10px; border: #d0d0d0 1px solid; border-radius: 4px; background-color: #FFF; width: 100%; margin-top: 5px; box-sizing:border-box; }
+.stripe-demoSelectBox { padding: 10px; border: #d0d0d0 1px solid; border-radius: 4px; background-color: #FFF; margin-top: 5px; }
+select.stripe-demoSelectBox { height: 35px; margin-right: 10px; }
+.stripe-error { background-color: #FF6600; padding: 8px 10px; border-radius: 4px; font-size: 0.9em; }
+.stripe-success { background-color: #c3c791; padding: 8px 10px; border-radius: 4px; font-size: 0.9em; }
+.stripe-info { font-size: .8em; color: #FF6600; letter-spacing: 2px; padding-left: 5px; }
+.stripe-btnAction { background-color: #586ada; padding: 10px 40px; color: #FFF; border: #5263cc 1px solid; border-radius: 4px; cursor:pointer; }
+.stripe-btnAction:focus { outline: none; }
+.stripe-column-right { margin-right: 6px; }
+.stripe-contact-row { display: inline-block; }
+.stripe-cvv-input { width: 60px; }
+#stripe-error-message { margin: 0px 0px 10px 0px; padding: 5px 25px; border-radius: 4px; line-height: 25px; font-size: 0.9em; color: #ca3e3e; border: #ca3e3e 1px solid; display: none; width: 300px; }
+#stripe-success-message { margin: 0px 0px 10px 0px; padding: 5px 25px; border-radius: 4px; line-height: 25px; font-size: 0.9em; color: #3da55d; border: #43b567 1px solid; width: 300px; }
+.stripe-display-none { display:none; }
+#stripe-response-container { padding: 40px 20px; width: 270px; text-align:center; }
+.stripe-ack-message { font-size: 1.5em; margin-bottom: 20px; }
+#stripe-response-container.success { border-top: #b0dad3 2px solid; background: #e9fdfa; }
+#stripe-response-container.error { border-top: #c3b4b4 2px solid; background: #f5e3e3; }
+.stripe-img-response { margin-bottom: 30px; }
+#stripe_loader { display: none; }
+#stripe_loader img { width: 45px; vertical-align: middle; }

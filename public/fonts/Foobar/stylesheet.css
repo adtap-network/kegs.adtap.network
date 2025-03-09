@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Foobar Pro';
+    src: url('FoobarPro-Regular.eot');
+    src: url('FoobarPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('FoobarPro-Regular.woff2') format('woff2'),
+        url('FoobarPro-Regular.woff') format('woff'),
+        url('FoobarPro-Regular.ttf') format('truetype'),
+        url('FoobarPro-Regular.svg#FoobarPro-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
