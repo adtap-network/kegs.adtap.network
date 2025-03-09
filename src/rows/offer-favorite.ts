@@ -1,4 +1,5 @@
-import { Row, RowInterface } from "bns.adtap.network";
+import Row from '../row';
+import RowInterface from '../interfaces/row';
 import { OfferFavoritesSchema } from '../schemas/offer-favorites';
 
 export class OfferFavoriteRow extends Row implements RowInterface {

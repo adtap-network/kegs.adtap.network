@@ -1,7 +1,8 @@
-import { Row, RowInterface } from "bns.adtap.network";
+import Row from '../row';
+import RowInterface from '../interfaces/row';
 import { OfferCategoriesSchema } from '../schemas/offer-categories';
 
-class OfferCategoryOfferValue extends CommonOfferValue implements CommonOfferValueInterface {
+class OfferCategoryRow extends Row implements RowInterface {
 
     constructor(a: Record<string, any> = {}) { super(a) }
 
@@ -13,4 +14,4 @@ class OfferCategoryOfferValue extends CommonOfferValue implements CommonOfferVal
     }
 
 }
-export default OfferCategoryOfferValue;
+export default OfferCategoryRow;

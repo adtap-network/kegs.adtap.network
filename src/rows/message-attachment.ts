@@ -1,4 +1,5 @@
-import { Row, RowInterface } from "bns.adtap.network";
+import Row from '../row';
+import RowInterface from '../interfaces/row';
 import { MessageAttachmentsSchema } from '../schemas/message-attachments';
 
 export class MessageAttachmentRow extends Row implements RowInterface {

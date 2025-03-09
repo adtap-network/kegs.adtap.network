@@ -1,7 +1,8 @@
-import { Row, RowInterface} from "bns.adtap.network";
+import Row from '../row';
+import RowInterface from '../interfaces/row';
 import { AccountOptionsSchema } from '../schemas/account-options';
 
-export class EntryOptionOfferValue extends Row implements RowInterface {
+class AccountOptionRow extends Row implements RowInterface {
 
     constructor(a: Record<string, any> = {}) { super(a) }
 
@@ -13,3 +14,4 @@ export class EntryOptionOfferValue extends Row implements RowInterface {
     }
 
 }
+export default AccountOptionRow;

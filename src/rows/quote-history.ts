@@ -1,4 +1,5 @@
-import { Row, RowInterface } from "bns.adtap.network";
+import Row from '../row';
+import RowInterface from '../interfaces/row';
 import { QuoteHistoriesSchema } from '../schemas/quote-histories';
 
 export class QuoteHistoryRow extends Row implements RowInterface {
