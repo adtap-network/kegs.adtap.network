@@ -1,16 +1,28 @@
-import { Bean, AccountBean, ErrorsBean, AccountInterface, BaseInterface } from 'bns.adtap.network';
+import Bean from './bean';
+import AccountBean from './beans/account';
+import ErrorsBean from './beans/errors';
+import AdapterInterface from './interfaces/adapter';
+import ModelInterface from './interfaces/model';
+import BaseInterface from './interfaces/base';
+import ContextInterface from './interfaces/context';
+import MysqlAdapter from "./adapters/my";
+import PgAdapter from "./adapters/pg";
 import { constants } from 'fs';
 import { access } from 'fs/promises';
 import QRCode from 'qrcode';
 import sharp from 'sharp';
-import { GetServerSideProps } from 'next';
-import { getSession } from 'next-auth/react';
 
-export default class Agent extends Bean {
+export default class Service extends Bean {
 
-    context = new Context();
+    adapter: AdapterInterface;
+    context: ContextInterface;
 
-    constructor() { super({}); }
+    constructor(context: ContextInterface, model: ModelInterface) { 
+        super({}); 
+        this.context = context;
+        if(this.context.datastore == 'my') { this.adapter = new MysqlAdapter(this.context.datasources.my.adtap, model); }
+        else { this.adapter = new PgAdapter(this.context.datasources.pg.adtap, model); }
+    }
 
     deleteRecord(id: string) {  let r = this.adapter.getRow(id); this.adapter.deleteRow(id); return r; }
 
@@ -44,19 +56,13 @@ export default class Agent extends Bean {
         return false;
     }
 
-    private async getAccountFromSession(req: any): Promise<AccountInterface | boolean> {
-        const session = await getSession({ req });
-        if(!session || !session.account) { return false; }
-        return session.account;
-    }
-
-    getContext(): Context { return this.context; }
+    getContext(): ContextInterface { return this.context; }
 
     async httpGet(url: string): Promise<{ content: string, headers: string[] }> { const response = await fetch(url); const content = await response.text(); const headers = [...response.headers.keys()]; return { content, headers }; }
 
     async logException(e: unknown, file: string, func: string, dump: boolean=false) {
         if(e instanceof Error) {
-            const c = new Context();
+            const c = this.context;
             const d = this.getLocalSeparator();
             const s = {filename: c.folder + '.log', directory: c.root + d + 'logs', filepath: c.root + d + 'logs' + d + c.folder + '.log'};
             let b = new ErrorsBean();
@@ -78,5 +84,5 @@ export default class Agent extends Bean {
         catch (err) { console.error('Error processing image', err); return ''; }
     }
 
-    setContext(context: Context) { this.context = context; }
+    setContext(context: ContextInterface) { this.context = context; }
 }

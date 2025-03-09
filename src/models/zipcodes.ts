@@ -1,9 +1,9 @@
-import CommonModel from '../settings/model';
-import CommonModelInterface from '../../../common/interfaces/model';
+import Model from '../model';
+import ModelInterface from '../interfaces/model';
 import { ZipcodesSchema } from '../schemas/zipcodes';
 import ZipcodesCols from '../columns/zipcodes';
 
-class ZipcodesModel extends CommonModel implements CommonModelInterface {
+class ZipcodesModel extends Model implements ModelInterface {
     constructor() { 
         super(
             'tblzipcodes',

@@ -1,7 +1,19 @@
 import Bean from './bean';
 import ErrorsBean from './beans/errors';
 import ErrorsInterface from './interfaces/errors';
+import FiltersBean from "./beans/filters";
+import FiltersInterface from "./interfaces/filters";
 import Intervals from './settings/intervals';
+import JsonBean from "./beans/json";
+import JsonInterface from "./interfaces/json";
+import MessageBean from "./beans/message";
+import MessageInterface from "./interfaces/message";
+import ParamsBean from "./beans/params";
+import ParamsInterface from "./interfaces/params";
+import Route from "./route";
+import RouteInterface from "./interfaces/route";
+import EndPoint from "./endpoint";
+import EndPointInterface from "./interfaces/endpoint";
 import Datasources from './datasources';
 import Mailers from './settings/mailers';
 import Procs from './settings/procs';
@@ -9,40 +21,63 @@ import path from 'path';
 import fs from 'fs';
 
 class Context extends Bean {
-    
-    buffer: number      				= 3;
-    curate: boolean                     = false;
+
     datastore: string                   = 'my';
-    datasources: typeof Datasources     = Datasources;
-    debug: boolean                      = false;
     domain: string                      = '';
-    errors: ErrorsInterface             = new ErrorsBean();
     federation: string                  = '';
-    fee: number     					= 0.0375;
     fetchedon: string                   = '';
     folder: string                      = '';
-    intervals: typeof Intervals         = Intervals;
     ip: string                          = '';
     landing: string                     = 'home_index';
-    logvisit: boolean                   = true;
-    mailers: typeof Mailers             = Mailers;
-    maintenance: boolean                = false;
     modekey: string                     = 'network13331adtap';
-    pci: boolean                		= false;
-    procs: typeof Procs                 = Procs;
-    peer: {[key: string]: any}          = {};
     pubkey: string                      = 'GDBJL7BOUTDE2UPD7IBIYES7ZQZ6O7B2Z63E72CMJYSXD5JGOXP5DDTS';
     ps: string                          = this.getLocalSeparator();
     reference: string                   = '';
     root: string                        = '';
     updatedon: string                   = '';
     url: string                         = '';
+    attempted: string                   = "";
+    content: string 				    = "";
+    deciphered: string				    = "";
+
+    buffer: number      				= 3;
+    fee: number     					= 0.0375;
+    port: number					    = 443;
+
+    curate: boolean                     = false;
+    debug: boolean                      = false;
+    logvisit: boolean                   = true;
+    maintenance: boolean                = false;
+    pci: boolean                		= false;
+
+    endpoints: {[key: string]: any}     = {};
+    peer: {[key: string]: any}          = {};
+    routes: {[key: string]: any}        = {};
+    services: {[key: string]: any}      = {};
+    uploads: {[key: string]: any} 	    = {};
+
+    datasources: typeof Datasources     = Datasources;
+    intervals: typeof Intervals         = Intervals;
+    mailers: typeof Mailers             = Mailers;
+    procs: typeof Procs                 = Procs;
+
+    errors: ErrorsInterface             = new ErrorsBean();
+    filters: FiltersInterface 		    = new FiltersBean();
+    json: JsonInterface 			    = new JsonBean();
+    mail: MessageInterface			    = new MessageBean();
+    params: ParamsInterface 		    = new ParamsBean();
+    route: RouteInterface               = new Route();
+    endpoint: EndPointInterface         = new EndPoint();
 
     constructor() { 
         super();
         this.root = this.getProjectRoot();
         this.folder = this.getProjectFolder();
     }
+
+    disableMaintenanceMode(): void { }
+
+    enableMaintenanceMode(): void { }
 
     initBootstrap(domain: string): void {
         let i = this.getLocalIp4();
@@ -92,6 +127,12 @@ class Context extends Bean {
     }
 
     getProjectFolder(): string { return path.basename(this.root); }
+
+    isMaintenanceMode(): boolean { return this.maintenance; }
+
+    isEndPoint(name: string): boolean { let i = false; if(this.endpoints.hasProperty(name)) { i = true; } return i; }
+
+    isRoute(name: string): boolean { let i = false; if(this.routes.hasProperty(name)) { i = true; } return i; }
     
 }
 export default Context;

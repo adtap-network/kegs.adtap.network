@@ -1,41 +1,61 @@
-import DatasourceInterface from './datasource';
 import ErrorsInterface from './errors';
+import FiltersInterface from "./filters";
+import Intervals from '../settings/intervals';
+import JsonInterface from "./json";
+import MessageInterface from "./message";
+import ParamsInterface from "./params";
+import RouteInterface from "./route";
+import EndPointInterface from "./endpoint";
+import Datasources from '../datasources';
+import Mailers from '../settings/mailers';
+import Procs from '../settings/procs';
 
 export default interface ContextInterface {
 
-    buffer: number;
-    curate: boolean;
     datastore: string;
-    datasources: DatasourceInterface;
-    debug: boolean;
     domain: string;
-    errors: ErrorsInterface;
     federation: string;
-    fee: number;
     fetchedon: string;
     folder: string;
-    intervals: {[key: string]: any};
     ip: string;
     landing: string;
-    logvisit: boolean;
-    mailers: {[key: string]: any};
-    maintenance: boolean;
     modekey: string;
-    pci: boolean;
-    procs: {[key: string]: any};
-    peer: {[key: string]: any};
     pubkey: string;
     ps: string;
     reference: string;
     root: string;
     updatedon: string;
     url: string;
+    attempted: string;
+    content: string;
+    deciphered: string;
 
-    initBootstrap(domain: string): void;
+    buffer: number;
+    fee: number;
+    port: number;
 
-    initPeer(): void;
+    curate: boolean;
+    debug: boolean;
+    logvisit: boolean;
+    maintenance: boolean;
+    pci: boolean;
 
-    getProjectRoot(): string;
+    endpoints: {[key: string]: any};
+    peer: {[key: string]: any};
+    routes: {[key: string]: any};
+    services: {[key: string]: any};
+    uploads: {[key: string]: any};
 
-    getProjectFolder(): string;
+    datasources: typeof Datasources;
+    intervals: typeof Intervals;
+    mailers: typeof Mailers;
+    procs: typeof Procs;
+
+    errors: ErrorsInterface;
+    filters: FiltersInterface;
+    json: JsonInterface;
+    mail: MessageInterface;
+    params: ParamsInterface;
+    route: RouteInterface;
+    endpoint: EndPointInterface;
 }

@@ -1,20 +1,11 @@
-import CommonContext from "../context";
-import CommonAdapterInterface from "bns.adtap.network";
-import CommonService from "../service";
-import MysqlAdapter from "../adapters/my";
-import PgAdapter from "../adapters/pg";
+import Service from "../service";
+import ContextInterface from "../interfaces/context";
 import CoinsModel from "../models/coins";
 
-class CoinsService extends CommonService {
+class CoinsService extends Service {
 
-    context: CommonContext;
-    adapter: CommonAdapterInterface;
-
-    constructor(context: CommonContext) {
-        super();
-        this.context = context;
-        if(this.context.datastore == 'my') { this.adapter = new MysqlAdapter(this.context.datasources.my.adtap, new CoinsModel()); }
-        else { this.adapter = new PgAdapter(this.context.datasources.pg.adtap, new CoinsModel()); }
+    constructor(context: ContextInterface) {
+        super(context, new CoinsModel());
     }
 
 }
