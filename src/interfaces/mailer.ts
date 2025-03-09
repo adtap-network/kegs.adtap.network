@@ -1,4 +1,6 @@
-export interface MailerInterface {
+import BeanInterface from './bean';
+
+export default interface MailerInterface extends BeanInterface {
 
     username: string;
     hash: string;

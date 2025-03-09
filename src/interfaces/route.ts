@@ -1,4 +1,6 @@
-export default interface RouteInterface {
+import BeanInterface from './bean';
+
+export default interface RouteInterface extends BeanInterface {
 
     id: string;
     title: string;

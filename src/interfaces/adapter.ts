@@ -1,7 +1,8 @@
+import BeanInterface from './bean';
 import DatasourceInterface from './datasource';
 import ModelInterface from './model';
 
-export default interface AdapterInterface {
+export default interface AdapterInterface extends BeanInterface {
 
     datasource: DatasourceInterface;
     model: ModelInterface;

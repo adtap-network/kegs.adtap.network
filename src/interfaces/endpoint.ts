@@ -1,4 +1,6 @@
-export default interface EndpointInterface {
+import BeanInterface from './bean';
+
+export default interface EndpointInterface extends BeanInterface {
 
     id: string;
     title: string;

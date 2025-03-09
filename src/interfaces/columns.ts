@@ -1,4 +1,6 @@
-export default interface ColumnsInterface {
+import BeanInterface from './bean';
+
+export default interface ColumnsInterface extends BeanInterface {
     select: string[];
     insert: string[];
     update: string[];

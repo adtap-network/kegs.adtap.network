@@ -1,3 +1,5 @@
-export default interface SchemaInterface {
+import BeanInterface from './bean';
+
+export default interface SchemaInterface extends BeanInterface {
 
 }

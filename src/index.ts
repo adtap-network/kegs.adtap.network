@@ -30,6 +30,7 @@ import LayoutBean from './beans/layout'; export { LayoutBean };
 import MessageBean from './beans/message'; export { MessageBean };
 import MimesBean from './beans/mimes'; export { MimesBean };
 import ParamsBean from './beans/params'; export { ParamsBean };
+import QueryBean from './beans/query'; export { QueryBean };
 import ShareBean from './beans/share'; export { ShareBean };
 import TradeBean from './beans/trade'; export { TradeBean };
 
@@ -97,6 +98,7 @@ import AccountInterface from './interfaces/account'; export { AccountInterface }
 import AdapterInterface from './interfaces/adapter'; export { AdapterInterface };
 import AgentInterface from './interfaces/agent'; export { AgentInterface };
 import BaseInterface from './interfaces/base'; export { BaseInterface };
+import BeanInterface from './interfaces/bean'; export { BeanInterface };
 import CoinInterface from './interfaces/coin'; export { CoinInterface };
 import ColumnsInterface from './interfaces/columns'; export { ColumnsInterface };
 import ContextInterface from './interfaces/context'; export { ContextInterface };

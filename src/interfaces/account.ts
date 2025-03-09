@@ -1,4 +1,6 @@
-export default interface AccountInterface {
+import BeanInterface from './bean';
+
+export default interface AccountInterface extends BeanInterface {
 
     id: string ;
     class: string;

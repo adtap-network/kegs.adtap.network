@@ -1,6 +1,7 @@
+import BeanInterface from './bean';
 import FiltersInterface from '../interfaces/filters';
 
-export default interface ParamsInterface {
+export default interface ParamsInterface extends BeanInterface {
     
         filters: FiltersInterface;
         action: string; 

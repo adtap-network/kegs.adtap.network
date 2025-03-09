@@ -1,6 +1,7 @@
+import BeanInterface from './bean';
 import CommonFault from "../fault";
 
-export default interface ErrorsInterface {
+export default interface ErrorsInterface extends BeanInterface {
 
     admin: boolean;
     codes: {[key: string]: {[key: string]: string}};

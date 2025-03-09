@@ -2,6 +2,7 @@ import Base from './base';
 import Bean from './bean';
 import BaseInterface from './interfaces/base';
 import ModelInterface from './interfaces/model';
+import ParamsInterface from './interfaces/params';
 import DatasourceInterface from './interfaces/datasource';
 
 class Adapter extends Bean {
@@ -55,7 +56,7 @@ class Adapter extends Bean {
 
     deleteRowByKey(key: string, value: string) { return; }
 
-    deleteRowByParams(params: {[key: string]: any}) { return; }
+    deleteRowByParams(params: ParamsInterface) { return; }
 
     deleteRow(id: string) { return; }
 
@@ -99,9 +100,9 @@ class Adapter extends Bean {
 
     getRowByKey(k: string, v: string) { return this.getRowByParams({[k]: v}); }
 
-    getRowByParams(p: {[key: string]: any}) { return {}; }
+    getRowByParams(p: ParamsInterface) { return {}; }
 
-    getSaveAction(r: {[key: string]: any}) { return ''; }
+    getSaveAction(r: ParamsInterface) { return ''; }
 
     hideErrors() { return; }
 
@@ -111,7 +112,7 @@ class Adapter extends Bean {
 
     listKeyRows(k: string, v: string) { return {}; }
 
-    listRowsByParams(p: {[key: string]: any}) { return {}; }
+    listRowsByParams(p: ParamsInterface) { return {}; }
 
     listTopRows(n: number) { return {}; }
 
@@ -119,7 +120,7 @@ class Adapter extends Bean {
 
     mergeMenus(m: {[key: string]: any}) { return {}; }
 
-    newFilters(p: BaseInterface) { 
+    newFilters(p: ParamsInterface) { 
         let f = new Base();
 		if(p.hasProperty('sortcol') && p.getPropertyValue('sortcol') != '') { 
             f.setPropertyValue('sortcol', p.getPropertyValue('sortcol')); 
@@ -195,7 +196,7 @@ class Adapter extends Bean {
 
     rowExists(id: string) { return false; }
 
-    rowExistsByParams(p: {[key: string]: any}) { return false; }
+    rowExistsByParams(p: ParamsInterface) { return false; }
 
     rowExistsByKey(k: string, v: string) { return false; }
 

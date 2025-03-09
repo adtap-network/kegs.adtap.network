@@ -1,4 +1,7 @@
-export default interface ServiceInterface {
+import BeanInterface from './bean';
+import ParamsInterface from './params';
+
+export default interface ServiceInterface extends BeanInterface {
 
     deleteRecord(id: string): {[key: string]: any};
 
@@ -6,12 +9,12 @@ export default interface ServiceInterface {
 
     listRecords(): {[key: string]: any};
 
-    listByParams(params: {[key: string]: any}): {[key: string]: any};
+    listByParams(params: ParamsInterface): {[key: string]: any};
 
-    newRecord(params: {[key: string]: any}): {[key: string]: any};
+    newRecord(params: ParamsInterface): {[key: string]: any};
 
-    saveRecord(params: {[key: string]: any}): {[key: string]: any};
+    saveRecord(params: ParamsInterface): {[key: string]: any};
 
-    searchRecords(params: {[key: string]: any}): {[key: string]: any};
+    searchRecords(params: ParamsInterface): {[key: string]: any};
 
 }

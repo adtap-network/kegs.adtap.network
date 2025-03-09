@@ -1,3 +1,4 @@
+import BeanInterface from './bean';
 import ErrorsInterface from './errors';
 import FiltersInterface from "./filters";
 import Intervals from '../settings/intervals';
@@ -10,7 +11,7 @@ import Datasources from '../datasources';
 import Mailers from '../settings/mailers';
 import Procs from '../settings/procs';
 
-export default interface ContextInterface {
+export default interface ContextInterface extends BeanInterface {
 
     datastore: string;
     domain: string;

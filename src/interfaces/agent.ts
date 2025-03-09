@@ -1,7 +1,8 @@
+import BeanInterface from './bean';
 import AccountInterface from './account';
 import ContextInterface from './context';
 
-export default interface AgentInterface {
+export default interface AgentInterface extends BeanInterface {
 
     context: ContextInterface;
 

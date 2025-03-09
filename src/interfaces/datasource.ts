@@ -1,4 +1,6 @@
-export default interface DatasourceInterface {
+import BeanInterface from './bean';
+
+export default interface DatasourceInterface extends BeanInterface {
 
     type: string;
     host: string;

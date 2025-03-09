@@ -1,4 +1,6 @@
-export default interface CoinInterface {
+import BeanInterface from './bean';
+
+export default interface CoinInterface extends BeanInterface {
 
     CoinId: string;
 	CoinAccount: string;
