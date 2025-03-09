@@ -1,5 +1,5 @@
-import DatasourceInterface from './datasource';
-import ModelInterface from './model';
+import { DatasourceInterface } from './datasource';
+import { ModelInterface } from './model';
 
 export interface AdapterInterface {
     

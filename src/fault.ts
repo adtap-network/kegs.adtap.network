@@ -1,6 +1,6 @@
-import CommonBase from './base'
+import { Base } from './base'
 
-class CommonFault extends CommonBase {
+export class Fault extends Base {
 	code: string = "";
 	date: string;
 	file: string = "";
@@ -11,5 +11,3 @@ class CommonFault extends CommonBase {
   
 	constructor() { super(); this.date = this.getDateNow(); }
 }
-
-export default CommonFault;

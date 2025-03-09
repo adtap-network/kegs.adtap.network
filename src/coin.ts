@@ -1,6 +1,6 @@
-import CommonBean from './common/bean';
+import { Bean } from './bean';
 
-class CommonCoin extends CommonBean {
+export class Coin extends Bean {
 
     constructor(a: Record<string, any> = {}) {
         super(a);
@@ -75,5 +75,3 @@ class CommonCoin extends CommonBean {
 
     countTrades() { this.TotalTrades = this.Trades.length; return this.TotalTrades; }
 }
-
-export default CommonCoin

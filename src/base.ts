@@ -1,7 +1,7 @@
 import { ExtendedDate } from './date';
-import CommonBaseInterface from './interfaces/base';
+import { BaseInterface } from './interfaces/base';
 
-class CommonBase implements CommonBaseInterface {
+export class Base implements BaseInterface {
 	[key: string]: any;
 	
 	chr(ascii: number): string { return String.fromCharCode(ascii); }
@@ -148,5 +148,3 @@ class CommonBase implements CommonBaseInterface {
 		return t;
 	}
 }
-
-export default CommonBase;
