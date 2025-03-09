@@ -1,3 +1,3 @@
-export interface FiltersInterface {
+export default interface FiltersInterface {
     
 }

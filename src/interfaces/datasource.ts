@@ -1,4 +1,4 @@
-export interface DatasourceInterface {
+export default interface DatasourceInterface {
 
     type: string;
     host: string;

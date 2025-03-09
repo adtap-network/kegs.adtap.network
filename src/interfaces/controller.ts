@@ -1,10 +1,10 @@
-import { ErrorsInterface } from "./errors";
-import { FiltersInterface } from "./filters";
-import { JsonInterface } from "./json";
-import { MessageInterface } from "./message";
-import { ParamsInterface } from "./params";
+import ErrorsInterface from "./errors";
+import FiltersInterface from "./filters";
+import JsonInterface from "./json";
+import MessageInterface from "./message";
+import ParamsInterface from "./params";
 
-export interface ControllerInterface {
+export default interface ControllerInterface {
 
         attempted: string;
         content: string;

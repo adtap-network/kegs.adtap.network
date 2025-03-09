@@ -1,4 +1,4 @@
-export class ExtendedDate extends Date {
+class ExpandedDate extends Date {
     getRealDay() { return this.getDay() + 1; }
 
     getRealMonth() { return this.getMonth() + 1; }
@@ -21,3 +21,4 @@ export class ExtendedDate extends Date {
 
     setRealMonth(v: number) { this.setMonth(v - 1); }
 }
+export default ExpandedDate;

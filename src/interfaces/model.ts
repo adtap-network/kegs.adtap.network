@@ -1,6 +1,6 @@
-import { ColumnsInterface } from './columns';
+import ColumnsInterface from './columns';
 
-export interface ModelInterface {
+export default interface ModelInterface {
     schema: object;
     table: string;
     prefix: string;

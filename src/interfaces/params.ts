@@ -1,3 +1,3 @@
-export interface ParamsInterface {
+export default interface ParamsInterface {
     
 } 

@@ -1,8 +1,8 @@
-import { DatasourceInterface } from './datasource';
-import { ModelInterface } from './model';
+import DatasourceInterface from './datasource';
+import ModelInterface from './model';
 
-export interface AdapterInterface {
-    
+export default interface AdapterInterface {
+
     datasource: DatasourceInterface;
     model: ModelInterface;
     debugging: boolean;
@@ -15,7 +15,7 @@ export interface AdapterInterface {
 
     buildCountQuery(f: {[key: string]: any}): string;
 
-    buildDeleteQuery(f: { [key: string]: any }): string;
+    buildDeleteQuery(f: {[key: string]: any}): string
 
     buildInsertQuery(f: {[key: string]: any}): string;
     
@@ -31,7 +31,7 @@ export interface AdapterInterface {
 
     buildWhereClause(f: {[key: string]: any}): string;
 
-    callProcedure(name: string, params: string[]): {[key: string]: any};
+    callProcedure(name: string, params: {[key: string]: any}): {[key: string]: any};
 
     columnAlias(k: string): string;
 
@@ -55,7 +55,7 @@ export interface AdapterInterface {
 
     flushData(): void;
 
-    getColumn(q: {[key: string]: any}, x: number): any;
+    getColumn(q: {[key: string]: any}, x: number): {[key: string]: any};
 
     getColumnAlias(k: string): string;
 
@@ -95,7 +95,7 @@ export interface AdapterInterface {
 
     hideErrors(): void;
 
-    insertRecord(r: {[key: string]: any}): string;
+    insertRecord(r: object): string;
 
     listRows(): {[key: string]: any};
 
@@ -145,11 +145,10 @@ export interface AdapterInterface {
 
     showErrors(): void;
 
-    sortDown(key: string): number;
+    sortDown(key: string): void;
 
-    sortUp(key: string): number;
+    sortUp(key: string): void;
 
-    updateRow(r: {[key: string]: any}): {[key: string]: any};
-
+    updateRow(r: object): {[key: string]: any};
 
 }

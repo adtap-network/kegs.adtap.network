@@ -1,17 +1,17 @@
-export interface ServiceInterface {
+export default interface ServiceInterface {
 
-    deleteRecord(id: string): {[key: string]: any};
+    deleteRecord(id: string): object;
 
-    getRecord(id: string): {[key: string]: any};
+    getRecord(id: string): object;
 
-    listRecords(): {[key: string]: any};
+    listRecords(): object;
 
-    listByParams(params: {[key: string]: any}): {[key: string]: any};
+    listByParams(params: object): object;
 
-    newRecord(params: {[key: string]: any}): {[key: string]: any};
+    newRecord(params: object): object;
 
-    saveRecord(params: {[key: string]: any}): {[key: string]: any};
+    saveRecord(params: object): object;
 
-    searchRecords(params: {[key: string]: any}): {[key: string]: any};
+    searchRecords(params: object): object;
 
 }

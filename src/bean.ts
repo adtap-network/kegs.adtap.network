@@ -1,4 +1,4 @@
-import { Base } from './base'
+import Base from './base'
 import crypto from 'crypto';
 import fs from 'fs';
 import path from 'path';
@@ -7,9 +7,9 @@ import { networkInterfaces } from 'os';
 import { parsePhoneNumberFromString, CountryCode } from 'libphonenumber-js';
 import { Readable } from 'stream';
 
-export class Bean extends Base {
+class Bean extends Base {
     [key: string]: any;
-
+    
     constructor(a: Record<string, any> = {}) { super(); if (this.isObject(a)) { this.mergeArgs(a); } }
 
     addslashes(str: string): string { return str.replace(/(['"\\])/g, '\\$1').replace(/\0/g, '\\0'); }
@@ -776,3 +776,5 @@ export class Bean extends Base {
     }
   
   }
+
+  export default Bean;

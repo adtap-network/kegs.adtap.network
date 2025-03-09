@@ -1,3 +1,3 @@
-export interface MessageInterface {
+export default interface MessageInterface {
     
 }

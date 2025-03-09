@@ -1,4 +1,4 @@
-export interface ColumnsInterface {
+export default interface ColumnsInterface {
     select: string[];
     insert: string[];
     update: string[];

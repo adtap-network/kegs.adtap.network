@@ -1,6 +1,6 @@
-import { Base } from './base'
+import Base from './base'
 
-export class Fault extends Base {
+class Fault extends Base {
 	code: string = "";
 	date: string;
 	file: string = "";
@@ -11,3 +11,5 @@ export class Fault extends Base {
   
 	constructor() { super(); this.date = this.getDateNow(); }
 }
+
+export default Fault;

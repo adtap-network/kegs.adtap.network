@@ -1,7 +1,7 @@
-import { ExtendedDate } from './date';
-import { BaseInterface } from './interfaces/base';
+import ExpandedDate from './date';
+import BaseInterface from './interfaces/base';
 
-export class Base implements BaseInterface {
+class Base implements BaseInterface {
 	[key: string]: any;
 	
 	chr(ascii: number): string { return String.fromCharCode(ascii); }
@@ -11,7 +11,7 @@ export class Base implements BaseInterface {
 	createUuid(): string { return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => { const r = (Math.random() * 16) | 0; return (c === "x" ? r : (r & 0x3) | 0x8).toString(16); }); }
 
 	getDateNow(): string {
-	  const o = new ExtendedDate();
+	  const o = new ExpandedDate();
 	  const y = o.getFullYear();
 	  const m = o.getMonth() + 1;
 	  const d = this.zeroPad(o.getDate().toString(), 2);
@@ -148,3 +148,5 @@ export class Base implements BaseInterface {
 		return t;
 	}
 }
+
+export default Base;

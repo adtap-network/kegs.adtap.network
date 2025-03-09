@@ -1,4 +1,4 @@
-export interface RowInterface {
+export default interface RowInterface {
     [key: string]: any;
 
     getDataArray(): [string, any][];

@@ -1,4 +1,4 @@
-export interface BaseInterface {
+interface BaseInterface {
   
 	countKeys(): number;
   
@@ -32,3 +32,5 @@ export interface BaseInterface {
 
 	zeroUnpad(t: string): string;
 }
+
+export default BaseInterface;

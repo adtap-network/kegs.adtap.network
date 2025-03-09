@@ -1,6 +1,6 @@
-import { FaultInterface } from "./fault";
+import CommonFault from "../fault";
 
-export interface ErrorsInterface {
+export default interface ErrorsInterface {
 
     admin: boolean;
     codes: {[key: string]: {[key: string]: string}};
@@ -13,7 +13,7 @@ export interface ErrorsInterface {
 
     clearErrors(): void;
 
-    createError(code: string, file: string, func: string, msg: string): FaultInterface;
+    createError(code: string, file: string, func: string, msg: string): CommonFault;
 
     createLog(): void;
 

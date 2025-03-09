@@ -1,3 +1,3 @@
-export interface SchemaInterface {
+export default interface SchemaInterface {
 
 }
