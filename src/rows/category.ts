@@ -2,7 +2,7 @@ import Row from '../row';
 import RowInterface from '../interfaces/row';
 import { CategoriesSchema } from '../schemas/categories';
 
-export class CategoryRow extends Row implements RowInterface {
+class CategoryRow extends Row implements RowInterface {
 
     constructor(a: Record<string, any> = {}) { super(a) }
 
@@ -14,3 +14,4 @@ export class CategoryRow extends Row implements RowInterface {
     }
 
 }
+export default CategoryRow;

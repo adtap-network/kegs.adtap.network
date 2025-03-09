@@ -2,7 +2,7 @@ import Row from '../row';
 import RowInterface from '../interfaces/row';
 import { AccountRewardsSchema } from '../schemas/account-rewards';
 
-export class EntryOptionOfferValue extends Row implements RowInterface {
+class AccountRewardRow extends Row implements RowInterface {
 
     constructor(a: Record<string, any> = {}) { super(a) }
 
@@ -14,3 +14,4 @@ export class EntryOptionOfferValue extends Row implements RowInterface {
     }
 
 }
+export default AccountRewardRow;

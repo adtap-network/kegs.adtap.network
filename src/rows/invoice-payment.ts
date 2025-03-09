@@ -2,7 +2,7 @@ import Row from '../row';
 import RowInterface from '../interfaces/row';
 import { InvoicePaymentsSchema } from '../schemas/invoice-payments';
 
-export class InvoicePaymentRow extends Row implements RowInterface {
+export default class InvoicePaymentRow extends Row implements RowInterface {
 
     constructor(a: Record<string, any> = {}) { super(a) }
 

@@ -2,7 +2,7 @@ import Row from '../row';
 import RowInterface from '../interfaces/row';
 import { AccountValuesSchema } from '../schemas/account-values';
 
-export class AccountValue extends Row implements RowInterface {
+class AccountValueRow extends Row implements RowInterface {
 
     constructor(a: Record<string, any> = {}) { super(a) }
 
@@ -14,3 +14,4 @@ export class AccountValue extends Row implements RowInterface {
     }
 
 }
+export default AccountValueRow;

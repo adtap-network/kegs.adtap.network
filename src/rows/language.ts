@@ -2,7 +2,7 @@ import Row from '../row';
 import RowInterface from '../interfaces/row';
 import { LanguagesSchema } from '../schemas/languages';
 
-export class LanguageRow extends Row implements RowInterface {
+export default class LanguageRow extends Row implements RowInterface {
 
     constructor(a: Record<string, any> = {}) { super(a) }
 

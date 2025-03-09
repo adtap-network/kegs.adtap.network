@@ -2,7 +2,7 @@ import Row from '../row';
 import RowInterface from '../interfaces/row';
 import { EntryFieldsSchema } from '../schemas/entry-fields';
 
-export class EntryFieldRow extends Row implements RowInterface {
+export default class EntryFieldRow extends Row implements RowInterface {
 
     constructor(a: Record<string, any> = {}) { super(a) }
 

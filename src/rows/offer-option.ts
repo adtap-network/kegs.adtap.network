@@ -2,7 +2,7 @@ import Row from '../row';
 import RowInterface from '../interfaces/row';
 import { OfferOptionsSchema } from '../schemas/offer-options';
 
-export class OfferOptionRow extends Row implements RowInterface {
+export default class OfferOptionRow extends Row implements RowInterface {
 
     constructor(a: Record<string, any> = {}) { super(a) }
 

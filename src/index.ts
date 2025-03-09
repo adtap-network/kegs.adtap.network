@@ -274,3 +274,5 @@ import { TicketNotesSchema, TicketNotesType } from './schemas/ticket-notes'; exp
 import { TicketsSchema, TicketsType } from './schemas/tickets'; export { TicketsSchema, TicketsType };
 import { TimezonesSchema, TimezonesType } from './schemas/timezones'; export { TimezonesSchema, TimezonesType };
 import { ZipcodesSchema, ZipcodesType } from './schemas/zipcodes'; export { ZipcodesSchema, ZipcodesType};
+
+/** services */

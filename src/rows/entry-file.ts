@@ -2,7 +2,7 @@ import Row from '../row';
 import RowInterface from '../interfaces/row';
 import { EntryFilesSchema } from '../schemas/entry-files';
 
-export class EntryFileRow extends Row implements RowInterface {
+export default class EntryFileRow extends Row implements RowInterface {
 
     constructor(a: Record<string, any> = {}) { super(a) }
 

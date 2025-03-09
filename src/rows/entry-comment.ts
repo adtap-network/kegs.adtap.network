@@ -2,7 +2,7 @@ import Row from '../row';
 import RowInterface from '../interfaces/row';
 import { EntryCommentsSchema } from '../schemas/entry-comments';
 
-export class EntryCommentRow extends Row implements RowInterface {
+export default class EntryCommentRow extends Row implements RowInterface {
 
     constructor(a: Record<string, any> = {}) { super(a) }
 

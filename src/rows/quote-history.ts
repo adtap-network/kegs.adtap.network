@@ -2,7 +2,7 @@ import Row from '../row';
 import RowInterface from '../interfaces/row';
 import { QuoteHistoriesSchema } from '../schemas/quote-histories';
 
-export class QuoteHistoryRow extends Row implements RowInterface {
+export default class QuoteHistoryRow extends Row implements RowInterface {
 
     constructor(a: Record<string, any> = {}) { super(a) }
 
