@@ -1,7 +1,7 @@
 import Bean from './bean';
 import ColumnsInterface from './interfaces/columns';
 
-export default class Columns extends Bean implements ColumnsInterface {
+class Columns extends Bean implements ColumnsInterface {
 
     select: string[]                        = [];
     insert: string[]                        = [];
@@ -18,6 +18,10 @@ export default class Columns extends Bean implements ColumnsInterface {
     sortdir: string                         = 'asc';
     sortorder: string                       = '';
     aliases: {[key: string]: any}           = {};
+    all: string[]                           = [];
+    keyin: string                           = '';
+    keyout: string                          = '';
 
     constructor() { super(); }    
 }
+export default Columns;

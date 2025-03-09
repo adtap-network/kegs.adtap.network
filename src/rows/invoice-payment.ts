@@ -1,0 +1,15 @@
+import { Row, RowInterface } from "bns.adtap.network";
+import { InvoicePaymentsSchema } from '../schemas/invoice-payments';
+
+export class InvoicePaymentRow extends Row implements RowInterface {
+
+    constructor(a: Record<string, any> = {}) { super(a) }
+
+    getDataArray(): [string, any][] { return this.getPropertiesArray('activity'); }
+
+    validateInput(input: any): boolean {
+        const validation = InvoicePaymentsSchema.validate(input);
+        return validation;
+    }
+
+}

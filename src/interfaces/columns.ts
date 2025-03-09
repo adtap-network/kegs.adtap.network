@@ -13,4 +13,7 @@ export default interface ColumnsInterface {
     sortcol: string;
     sortdir: string;
     sortorder: string;
+    all: string[];
+    keyin: string;
+    keyout: string;
 }

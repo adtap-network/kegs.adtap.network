@@ -60,7 +60,6 @@ export default interface CoinInterface {
 	Ratings: {[key: string]: any}[];
 	Trades: {[key: string]: any}[];
     
-
     countHolders(): number;
 
     countMarkets(): number;
