@@ -1,6 +1,8 @@
-import { Bean, Columns, ModelInterface } from 'bns.adtap.network';
+import Bean from './bean';
+import Columns from './columns';
+import ModelInterface from './interfaces/model'; 
 
-class CommonModel extends Bean implements ModelInterface {
+class Model extends Bean implements ModelInterface {
 
     schema: object;
     table: string;
@@ -17,4 +19,4 @@ class CommonModel extends Bean implements ModelInterface {
         this.cols = cols;
     }    
 }
-export default CommonModel;
+export default Model;

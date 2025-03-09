@@ -1,9 +1,9 @@
-import CommonModel from '../model';
-import CommonModelInterface from '../../../common/interfaces/model';
+import Model from '../model';
+import ModelInterface from '../interfaces/model';
 import { AccountActivitiesSchema } from '../schemas/account-activities';
 import AccountActivitiesCols from '../columns/account-activities';
 
-class AccountActivitiesModel extends CommonModel implements CommonModelInterface {
+class AccountActivitiesModel extends Model implements ModelInterface {
 
     constructor() { 
         super(
