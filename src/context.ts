@@ -69,29 +69,19 @@ class Context extends Bean {
     route: RouteInterface               = new Route();
     endpoint: EndPointInterface         = new EndPoint();
 
-    constructor() { 
+    constructor(domain: string) { 
         super();
         this.root = this.getProjectRoot();
         this.folder = this.getProjectFolder();
-    }
-
-    disableMaintenanceMode(): void { }
-
-    enableMaintenanceMode(): void { }
-
-    initBootstrap(domain: string): void {
         let i = this.getLocalIp4();
         if(i != undefined) { this.ip = i; }
         let d = domain.split('.');
         if(d.length >= 2) { this.federation = d[d.length-2] + '.' + d[d.length-1]; }
-        this.domain			      =	domain;
-		this.url				  =	'https://' + domain;
-		this.reference	          =	this.domain.replace('.','_');
-		this.root 			      =	this.getProjectRoot();
-		this.secret 		      =	this.getEnvironmentVariable('GDBJL7BOUTDE2UPD7IBIYES7ZQZ6O7B2Z63E72CMJYSXD5JGOXP5DDTS');
-    }
-
-    initPeer(): void {
+        this.domain = domain;
+		this.url = 'https://' + domain;
+		this.reference = this.domain.replace('.','_');
+		this.root =	this.getProjectRoot();
+		this.secret =	this.getEnvironmentVariable('GDBJL7BOUTDE2UPD7IBIYES7ZQZ6O7B2Z63E72CMJYSXD5JGOXP5DDTS');
         this.peer = {
             name: this.reference,
             ip: this.ip,
@@ -100,19 +90,23 @@ class Context extends Bean {
             root: this.url,
             federation: this.federation,
             webroot: this.root,
-            backup:	this.root + this.ps + 'database' + this.ps + this.reference,
-            htdocs:	this.root + this.ps + 'htdocs' + this.ps + this.reference,
-            volume:	this.root + this.ps + 'volumes' + this.ps + this.reference,
-            source:	this.root + this.ps + 'classes',
-            data: this.root + this.ps + 'data',
+            htdocs:	this.root + this.ps + 'public' + this.ps + this.reference,
+            volume:	this.root + this.ps + 'volume' + this.ps + this.reference,
+            source:	this.root + this.ps + 'src',
+            dist: this.root + this.ps + 'dist',
             logs: this.root + this.ps + 'logs',
-            skin: this.root + this.ps + 'skin',
-            theme: this.root + this.ps + 'themes' + this.ps + this.reference,
-            toml:this.root + this.ps + 'toml',
-            wasm: this.root + this.ps + 'wasm',
-            templates: this.root + this.ps + 'templates'
+            templates: this.root + this.ps + 'src' + this.ps + 'templates',
+            toml:this.root + this.ps + 'volume' + this.ps + 'toml',
+            wasm: this.root + this.ps + 'volume' + this.ps + 'wasm',
+            styles: this.root + this.ps + 'public' + this.ps + 'styles',
+            fonts: this.root + this.ps + 'public' + this.ps + 'fonts',
+            images: this.root + this.ps + 'public' + this.ps + 'images'
         };
     }
+
+    disableMaintenanceMode(): void { }
+
+    enableMaintenanceMode(): void { }
 
     getProjectRoot(): string {
         let currentDir = process.cwd();
