@@ -11,7 +11,7 @@ import { Readable } from 'stream';
 class Base implements BaseInterface {
 	[key: string]: any;
 
-	constructor(a: Record<string, any> = {}) { super(); if (this.isObject(a)) { this.mergeArgs(a); } }
+	constructor(a: Record<string, any> = {}) { if (this.isObject(a)) { this.mergeArgs(a); } }
 	
 	addslashes(str: string): string { return str.replace(/(['"\\])/g, '\\$1').replace(/\0/g, '\\0'); }
     
