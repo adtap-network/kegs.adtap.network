@@ -43,6 +43,7 @@ export default interface ContextInterface extends BaseInterface {
     datasources: {[key: string]: any};
     endpoints: {[key: string]: any};
     feathers: {[key: string]: any};
+    intervals: {[key: string]: any};
     mailers: {[key: string]: any};
     peer: {[key: string]: any};
     procs: {[key: string]: any};
@@ -52,8 +53,7 @@ export default interface ContextInterface extends BaseInterface {
     uploads: {[key: string]: any};
 
     errors: ErrorsInterface;
-    filters: FiltersInterface;
-    intervals: IntervalsInterface;
+    filters: FiltersInterface;    
     json: JsonInterface;
     mail: MessageInterface;
     params: ParamsInterface;

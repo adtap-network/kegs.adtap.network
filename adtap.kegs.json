@@ -1,4 +1,21 @@
 {
+    "domains": [
+        "adtap.network",
+        "admin.adtap.network",
+        "ads.adtap.network",
+        "api.adtap.network",
+        "auth.adtap.network",
+        "blog.adtap.network",
+        "member.adtap.network",
+        "pay.adtap.network",
+        "wallet.adtap.network",
+        "www.adtap.network",
+        "graphql.adtap.network",
+        "www.altsystem.com",
+        "www.couponflux.com",
+        "admin.upstateweeklynews.com",
+        "www.upstateweeklynews.com"
+    ],
     "intervals": {
         "xlm": 3600,
         "fiats": 43200,

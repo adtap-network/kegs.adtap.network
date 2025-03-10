@@ -14,4 +14,5 @@ export default interface Intervals {
     domains: number;
     expert: number;
     context: number;
+    
 }
