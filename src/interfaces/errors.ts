@@ -1,0 +1,39 @@
+import BaseInterface from './base';
+import CommonFault from "../fault";
+
+export default interface ErrorsInterface extends BaseInterface {
+
+    admin: boolean;
+    codes: {[key: string]: {[key: string]: string}};
+    counter: number;
+    dump: boolean;
+    errors: {}[];
+    settings: {[key: string]: string};
+
+    addError(error: {}): void;
+
+    clearErrors(): void;
+
+    createError(code: string, file: string, func: string, msg: string): CommonFault;
+
+    createLog(): void;
+
+    decrementCounter() : void;
+
+    getCurrentError(): {[key: string]: string};
+
+    getError(index: number): {[key: string]: string};
+    
+    getErrorCount(): number;
+
+    getErrors(): {}[];
+
+    incrementCounter(): void;
+
+    nextError(): {[key: string]: string};
+
+    previousError(): {[key: string]: string};
+
+    resetCounter(): void;
+
+}

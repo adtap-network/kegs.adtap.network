@@ -1,0 +1,33 @@
+{
+    "intervals": {
+        "xlm": 3600,
+        "fiats": 43200,
+        "commodities": 28800,
+        "pools": 7200,
+        "products": 7200,
+        "drops": 3600,
+        "coins": 7200,
+        "inventory": 7200,
+        "toml": 604800,
+        "wallets": 2400,
+        "issuers": 604800,
+        "domains": 604800,
+        "expert": 7200,
+        "context": 1200
+    },
+    "mailers": {
+        "adtap": {
+            "username": "",
+            "hash": "",
+            "password": "",
+            "port": 587,
+            "from": "",
+            "sender": "",
+            "host": "",
+            "timeout": 300
+        }
+    },
+    "procs": {
+
+    }
+}
