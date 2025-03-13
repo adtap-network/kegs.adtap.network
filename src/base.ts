@@ -1,4 +1,3 @@
-import ExpandedDate from './date';
 import BaseInterface from './interfaces/base';
 import crypto from 'crypto';
 import fs from 'fs';
@@ -7,6 +6,10 @@ import os from 'os';
 import { networkInterfaces } from 'os';
 import { parsePhoneNumberFromString, CountryCode } from 'libphonenumber-js';
 import { Readable } from 'stream';
+import { constants } from 'fs';
+import { access } from 'fs/promises';
+import QRCode from 'qrcode';
+import sharp from 'sharp';
 
 class Base implements BaseInterface {
 	[key: string]: any;
@@ -38,35 +41,35 @@ class Base implements BaseInterface {
 
     asciiPeriod(): string { return String.fromCharCode(46); }
 
-		asciiPound(): string { return String.fromCharCode(35); }
+	asciiPound(): string { return String.fromCharCode(35); }
 
-		asciiAmper(): string { return String.fromCharCode(38); }
-    
-		asciiTab(): string { return String.fromCharCode(9); }
+	asciiAmper(): string { return String.fromCharCode(38); }
 
-		asciiCr(): string { return String.fromCharCode(13); }
+	asciiTab(): string { return String.fromCharCode(9); }
 
-		asciiLf(): string { return String.fromCharCode(10); }
+	asciiCr(): string { return String.fromCharCode(13); }
 
-		asciiCrlf(): string { return String.fromCharCode(13) + String.fromCharCode(10); }
+	asciiLf(): string { return String.fromCharCode(10); }
 
-		asciiDquote(): string { return String.fromCharCode(34); }
+	asciiCrlf(): string { return String.fromCharCode(13) + String.fromCharCode(10); }
 
-		asciiComma(): string { return String.fromCharCode(44); }
+	asciiDquote(): string { return String.fromCharCode(34); }
 
-		asciiSquote(): string { return String.fromCharCode(39); }
+	asciiComma(): string { return String.fromCharCode(44); }
 
-	  asciiSpace(): string { return String.fromCharCode(32); }
+	asciiSquote(): string { return String.fromCharCode(39); }
 
-		asciiDash(): string { return String.fromCharCode(45); }
+	asciiSpace(): string { return String.fromCharCode(32); }
 
-		asciiSemi(): string { return String.fromCharCode(59); }
+	asciiDash(): string { return String.fromCharCode(45); }
 
-		asciiQmark(): string { return String.fromCharCode(63); }
+	asciiSemi(): string { return String.fromCharCode(59); }
 
-		asciiBslash(): string { return String.fromCharCode(92); }
+	asciiQmark(): string { return String.fromCharCode(63); }
 
-		asciiFslash(): string { return String.fromCharCode(47); }
+	asciiBslash(): string { return String.fromCharCode(92); }
+
+	asciiFslash(): string { return String.fromCharCode(47); }
 
     asciiUnderscore(): string { return String.fromCharCode(95); }
 
@@ -262,6 +265,11 @@ class Base implements BaseInterface {
 
 	escUrl(field: string): string { if (field === '') return field; let originalUrl = field; field = field.replace(/[^a-z0-9-~+_.?#=!&;,/:%@$\|*'()\\x80-\\xff]/gi, ''); const strip = ['%0d', '%0a', '%0D', '%0A']; field = this.deepReplace(strip, field); field = field.replace(';//', '://'); if (field.indexOf(':') === -1 && !['/', '#', '?'].includes(field[0]) && !/^[a-z0-9-]+?\.php/i.test(field)) { field = 'http://' + field; } return field; }
 
+	async fileExists(filePath: string): Promise<boolean> {
+        try { await access(filePath, constants.F_OK); return true; }
+        catch { return false; }
+    }
+
 	find(needle: string, haystack: string, startpos: number = 0): number { const pos = haystack.toLowerCase().indexOf(needle.toLowerCase(), startpos); return pos === -1 ? 0 : pos + 1; }
 
 	floatToFraction(n: number, tolerance: number = 1.e-9): { numerator: number, denominator: number, str_view: string } | false {
@@ -373,6 +381,11 @@ class Base implements BaseInterface {
 		return t;
 	}
 
+	async generateQRCode(u: string): Promise<string> {
+		try { const pngData = await QRCode.toDataURL(u, { errorCorrectionLevel: 'H', margin: 4, color: { dark: 'black', light: 'white' }}); return pngData; } 
+		catch (error) { console.error('Error generating QR code:', error); return ''; }
+	}
+
 	generateRandomString(l: number = 10): string {
 		const s = 'abcdefghijklmnopqrstuvwxyz';
 		const c = s.length;
@@ -445,7 +458,7 @@ class Base implements BaseInterface {
     }
 
     getGlobalConstant(d: string): any { const v = (global as any)[d]; return v !== undefined ? v : false; }
-
+	
     getLocalHostname(): string { return os.hostname(); }
     
     getLocalIp4(): string | undefined { const interfaces = networkInterfaces(); for (const interfaceName in interfaces) { if (Object.hasOwnProperty.call(interfaces, interfaceName)) { const networkInterface = interfaces[interfaceName]; for (const net of networkInterface!) { if (net.family === 'IPv4' && !net.internal) { return net.address; } } } } return undefined; }
@@ -514,6 +527,8 @@ class Base implements BaseInterface {
 	hasProperty(k: string): boolean { return Object.prototype.hasOwnProperty.call(this, k); }
 	
 	hour(d: string = "now"): number { return this.parseDate(d).getHours(); }
+
+	async httpGet(url: string): Promise<{ content: string, headers: string[] }> { const response = await fetch(url); const content = await response.text(); const headers = [...response.headers.keys()]; return { content, headers }; }
 
 	isAlphanum(s: string): number { return /^[a-zA-Z0-9]+$/.test(s) ? 1 : 0; }
 
@@ -595,6 +610,19 @@ class Base implements BaseInterface {
 		}
 		return o;
 	}
+
+	async makeThumbnailFromString(p: string, t: 'png' | 'jpg' | 'gif' = 'png', r: number = 0.2): Promise<string> {
+        const imageBuffer = Buffer.from(p, 'base64');    
+        try {
+          const resizedBuffer = await sharp(imageBuffer).resize({ width: Math.round(150 * r), height: Math.round(150 * r) }).toBuffer();
+          let resultBase64 = '';
+          if (t === 'gif') { resultBase64 = (await sharp(resizedBuffer).gif().toBuffer()).toString('base64'); resultBase64 = 'data:image/gif;base64,' + resultBase64; }
+          else if (t === 'jpg') { resultBase64 = (await sharp(resizedBuffer).jpeg().toBuffer()).toString('base64'); resultBase64 = 'data:image/jpeg;base64,' + resultBase64; }
+          else { resultBase64 = (await sharp(resizedBuffer).png().toBuffer()).toString('base64'); resultBase64 = 'data:image/png;base64,' + resultBase64; }
+          return resultBase64;
+        }
+        catch (err) { console.error('Error processing image', err); return ''; }
+    }
 
 	menuCurrencies(): { [key: string]: string } { return { USD: 'US Dollar' }; }
 
@@ -744,7 +772,7 @@ class Base implements BaseInterface {
 		return q;
 	}
 
-	readFile(filePath: string): string {
+	async readFile(filePath: string): Promise<string> {
 		try {
 		  const data = fs.readFileSync(filePath, 'utf8');
 		  return data;

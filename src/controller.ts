@@ -3,6 +3,7 @@ import Context from './context';
 import ContextInterface from './interfaces/context';
 import { ViewClasses } from './exports/views';
 import express, { Request, Response } from "express";
+import { transform, type TransformResult } from "@astrojs/compiler";
 
 export default class Controller extends Base {
 
@@ -25,6 +26,36 @@ export default class Controller extends Base {
             if(typeof instance[methodName] === 'function') {
                 this.content = instance[methodName](this.context);
             }
+        }
+    }
+
+    getBlockContent(block: string): Promise<string> { return this.getTemplateContent('blocks_' + block); }
+
+    getLayoutContent(layout: string): Promise<string> { return this.getTemplateContent('layouts_' + layout); }
+
+    getScreenContent(screen: string): Promise<string> { return this.getTemplateContent('screens_' + screen); }
+
+    async getTemplateContent(template: string): Promise<string> {
+        const p = this.context.peer.template + this.context.ps + template.replace('_', this.context.ps) + '.adtap';
+        const x = this.context.exportProps();
+        let s = await this.readFile(p);
+
+        const f= `---
+const Astro = { props: ${JSON.stringify(x)} };
+---\n`;
+
+        let i = f + s;
+        const t: TransformResult = await transform(i, {
+            filename: p,
+            sourcemap: "both",
+            internalURL: "astro/runtime/server/index.js"
+        });
+        return t.code;
+    }
+
+    async logException(e: unknown, file: string, func: string, dump: boolean=false) {
+        if(e instanceof Error) {
+            this.context.errors.logException(e, file, func, 'error', dump);
         }
     }
 

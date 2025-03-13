@@ -341,7 +341,7 @@ countStringTokens(s: string, delimiter: string): number;
 
     quotedValueList(l: string, d: string): string;
 
-    readFile(filePath: string): string;
+    readFile(filePath: string): Promise<string>;
     
     safeDecrypt(m: string, s: string): string;
 

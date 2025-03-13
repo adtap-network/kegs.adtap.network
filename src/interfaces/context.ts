@@ -1,4 +1,5 @@
 import BaseInterface from './base';
+import AccountInterface from './account';
 import ErrorsInterface from './errors';
 import FiltersInterface from "./filters";
 import JsonInterface from "./json";
@@ -53,6 +54,7 @@ export default interface ContextInterface extends BaseInterface {
     svelte: {[key: string]: any};
     uploads: {[key: string]: any};
 
+    account: AccountInterface;
     errors: ErrorsInterface;
     filters: FiltersInterface;    
     json: JsonInterface;
@@ -76,6 +78,8 @@ export default interface ContextInterface extends BaseInterface {
     
     enableMaintenanceMode(): void;
 
+    exportProps(): {[key: string]: any};
+    
     getProjectFolder(): string;
 
     getProjectRoot(): string;

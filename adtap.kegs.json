@@ -1,4 +1,208 @@
 {
+    "blocks": [
+        ["accounts_2fa","Two Factor Authentication"],
+        ["accounts_accept","Accept Invitation"],
+        ["accounts_close","Close Account"],
+        ["accounts_edit","Member"],
+        ["accounts_index","Profile"],
+        ["accounts_invite","Invite a Friend"],
+        ["accounts_login","Sign In"],
+        ["accounts_modal","Account Details"],
+        ["accounts_modify","Profile"],
+        ["accounts_more","Accounts"],
+        ["accounts_password","Reset Password"],
+        ["accounts_premium","Upgrade to Premium"],
+        ["accounts_register", "New Account Sign-up"],
+        ["accounts_setup","Member Account Setup"],
+        ["accounts_signup","Sign Up"],
+        ["accounts_verify","Verify Code"],
+        ["activities_index","Activities"],
+        ["activities_modal","Activity"],
+        ["activities_more","Activities"],
+        ["admin_index","Administration"],
+        ["agents_index","Agents"],
+        ["balances_assets","Reserves Report"],
+        ["balances_index","Liquidity Report"],
+        ["brands_edit","Edit Brand"],
+        ["brands_index","Brands"],
+        ["brands_modal","Brand"],
+        ["brands_more","Brands"],
+        ["brands_new","New Brand"],
+        ["calls_index","API Calls"],
+        ["calls_modal","API Call"],
+        ["calls_more","API Calls"],
+        ["coins_chart","Chart"],
+        ["coins_edit","Edit"],
+        ["coins_exchange","Legacy Assets"],
+        ["coins_index","Money"],
+        ["coins_info","Info"],
+        ["coins_modal","Info"],
+        ["coins_more","Coins"],
+        ["coins_new","New"],
+        ["contacts_book","Contacts"],
+        ["contacts_display","Contact Details"],
+        ["contacts_index","Contacts"],
+        ["contacts_modal","Contact Details"],
+        ["contacts_more","Contacts"],
+        ["contacts_new","New Contact"],
+        ["coupons_display","Coupon"],
+        ["coupons_edit","Edit Coupon"],
+        ["coupons_index","Coupons"],
+        ["coupons_modal","Coupon"],
+        ["coupons_more","Coupons"],
+        ["coupons_new","New Coupon"],
+        ["coupons_share","Share"],    
+        ["customers_book","Customer"],
+        ["customers_display","Customer"],
+        ["customers_edit","Edit Customer"],
+        ["customers_index","Customers"],
+        ["customers_modal","Customer"],
+        ["customers_more","Customers"],
+        ["customers_new","New Customer"],
+        ["domains_index","Domains"],
+        ["domains_modal","Domain"],
+        ["domains_more","Domains"],
+        ["drops_display","Reward Details"],
+        ["drops_edit","Edit Reward"],
+        ["drops_index","Rewards"],
+        ["drops_modal","Reward"],
+        ["drops_more","Rewards"],
+        ["drops_new","New Drop"],
+        ["favorites_index","Favorites"],
+        ["favorites_modal","Favorite"],
+        ["favorites_more","Favorites"],
+        ["features_edit","Edit Feature"],
+        ["features_index","Features"],
+        ["features_modal","Feature Details"],
+        ["features_more","Features"],
+        ["features_new","New Feature"],
+        ["groups_confirm","Transfer Business"],
+        ["groups_dashboard","Business"],
+        ["groups_display","Business"],
+        ["groups_index","Businesses"],
+        ["groups_invitation","Transfer Ownership Invitation"],
+        ["groups_manage","Manage Business"],
+        ["groups_modal","Business"],
+        ["groups_modify","Edit Business"],
+        ["groups_more","Businesses"],
+        ["groups_new","New Business"],
+        ["groups_transfer","Transfer Business"],
+        ["history_index","Activity History"],
+        ["history_modal","Activity Details"],
+        ["history_more","Activity History"],
+        ["holidays_current","Current Holidays"],
+        ["holidays_edit","Edit Holiday"],
+        ["holidays_index","Holidays"],
+        ["holidays_modal","Holiday Details"],
+        ["holidays_more","Holidays"],
+        ["holidays_new","New Holiday"],
+        ["holidays_preview","Preview Template"],
+        ["holidays_template","New Template"],
+        ["holidays_templates","Templates"],
+        ["home_error","System Error"],
+        ["home_index","Home"],
+        ["home_prices","Spot Prices"],
+        ["home_unauthorized","Not Allowed"],
+        ["home_unavailable","Temporarily Unavailable"],
+        ["home_unknown","404 Not Found"],
+        ["invoices_display","Invoice Details"],
+        ["invoices_edit","Edit Invoice"],
+        ["invoices_index","Invoices"],
+        ["invoices_new","New Invoice"],
+        ["invoices_modal","Invoice"],
+        ["invoices_more","Invoices"],
+        ["invoices_lines","Lines"],
+        ["invoices_line","New Line Item"],
+        ["invoices_payments","Payments"],
+        ["invoices_simple","New Payment"],
+        ["issuers_edit","Edit Issuer"],
+        ["issuers_index","Issuers"],
+        ["issuers_modal","Issuer"],
+        ["issuers_more","Issuers"],
+        ["issuers_new","New Issuer"],
+        ["logs_archived","Archived Logs"],
+        ["logs_crypt","Encrypt String"],
+        ["logs_messages","Messages Log"],
+        ["logs_index","Logs"],
+        ["logs_display","Log Details"],
+        ["logs_files","Log Files"],
+        ["logs_visitors","Visitors"],
+        ["messages_display","Message Details"],
+        ["messages_edit","Edit Message"],
+        ["messages_index","Messages"],
+        ["messages_modal","Message Details"],
+        ["messages_more","Messages"],
+        ["messages_new","New Message"],
+        ["offers_index","Offers"],
+        ["offers_modal","Offer"],
+        ["offers_more","Offers"],
+        ["offers_new","New Offer"],
+        ["operations_buy","Buy"],
+        ["operations_changenow","ChangeNOW"],
+        ["operations_confirm","Confirm"],
+        ["operations_exchange","Exchange"],
+        ["operations_give","New Gift"],
+        ["operations_index","History"],
+        ["operations_modal","Receipt"],
+        ["operations_more","Operations"],
+        ["operations_onramp","Stripe Crypto On-Ramp"],
+        ["operations_pay","Pay"],
+        ["operations_pool","Pool"],
+        ["operations_print","Receipt"],
+        ["operations_receipt","Receipt"],
+        ["operations_receive","QR Code"],
+        ["operations_redeem","Redeem Coupon"],
+        ["operations_sell","Sell"],
+        ["operations_swap","Swap"],
+        ["orders_index","Orders"],
+        ["orders_modal","Order"],
+        ["orders_more","Orders"],
+        ["peers_display","Peer"],
+        ["peers_edit","Edit Peer"],
+        ["peers_index","Peers"],
+        ["peers_modal","Peer"],
+        ["peers_more","Peer"],
+        ["peers_new","New Peer"],
+        ["pools_index","Liquidity Pools"],
+        ["pools_modal","Pool"],
+        ["pools_more","Pools"],
+        ["products_edit","Edit Product"],
+        ["products_index","Products"],
+        ["products_modal","Product"],
+        ["products_more","Products"],
+        ["products_new","New Product"],
+        ["segments_category","Category"],
+        ["segments_categories","Categories"],
+        ["segments_edit","Edit Market Segment"],
+        ["segments_index","Market Segments"],
+        ["segments_modal","Market Segment"],
+        ["segments_more","Market Segments"],
+        ["segments_new","New Market Segment"],
+        ["shop_coupons","Deals"],
+        ["shop_index","Marketplace"],
+        ["support_index","Support"],
+        ["support_cookies","Cookie Notice"],
+        ["support_copyright","Copyright Statement"],
+        ["support_legal","Legal Information"],
+        ["support_manual","Manual"],
+        ["support_notices","Notices"],
+        ["support_privacy","Privacy Policy"],
+        ["support_security","Security Policy"],
+        ["support_stellar","Stellar"],
+        ["support_stripe","Stripe"],
+        ["support_terms","Terms of Service"],
+        ["tickets_display","Ticket Details"],
+        ["tickets_edit","Edit"],
+        ["tickets_file","Attach File (Modal)"],
+        ["tickets_index","Tickets"],
+        ["tickets_modal","Ticket Details"],
+        ["tickets_more","Tickets"],
+        ["tickets_new","New Support Ticket"],
+        ["tickets_note","Add Ticket Note (Modal)"],
+        ["visits_index","Visits"],
+        ["visits_modal","Visit"],
+        ["visits_more","Visits"]
+    ],
     "datasource": {
 		"name": "couponflux",
         "type": "mysql",
@@ -158,6 +362,12 @@
         "visits_save": ["visits_save","Save Visit"],
         "visits_search": ["visits_search","Search Visits"]
     },
+    "hooks": {
+        "connect": {"route": "/hooks/connect/","actions": ["account.updated","account.authorized","balance.available","payout.created","payout.failed","payout.paid"],"crypt":"p/Az6dNWO/nrEkMjDd87A5MOGOYeT1qlD1Vn0r+DdY+mUdAjgROr+WkFvTTZKFh5cn80IxZm","secret":""},
+        "stripe": {"route": "/hooks/stripe/","actions":["balance.available","payment_intent.cancelled","payment_intent.created","payment_intent.payment_failed","payment_intent.processing","payment_intent.requires_action","payment_intent.succeeded"],"crypt":"sg8TXzcIvg1dlfF9m/5fbmNZ0Ebx9bsxGTtYgb663WH3l0/nciGRHlaWU87veipSIyDSZb90","secret":""},
+        "btcpay": {"route": "/hooks/btcpay/","actions":["InvoiceProcessing","InvoiceExpired","InvoiceCreated","InvoiceSettled"],"crypt":"yfqsrDO9FtH8gx5GiKPjnRuN0ey+wsYrizgFgAwf2ddn1eDbasy53cWmTFQ=","secret":""},
+        "stellar": {"route": "/hooks/stellar/","actions": [],"crypt":"","secret":""}      
+    },
     "intervals": {
         "xlm": 3600,
         "fiats": 43200,
@@ -185,7 +395,143 @@
         "timeout": 300
     },
     "procs": {
-
+        "accounts": {
+            "get": ["spr_accounts_get","row",["account_id"]],
+            "search": ["spr_accounts","results",["account_class","account_type","account_sponsor","account_status","account_login","account_code","account_full","account_email","account_phone","account_zip","account_level","account_verified","account_directory","account_dob","account_createdon","sortcol","sortdir","offset","maxrows"]]
+        },
+        "activities": {
+            "get": ["spr_activities_get","row",["activity_id"]],
+            "search": ["spr_activities","results",["activity_account","activity_name","activity_type","activity_status","activity_route","activity_date","sortcol","sortdir","offset","maxrows"]]
+        },
+        "addresses": {
+            "get": ["spr_addresses_get","row",["addr_name"]],
+            "search": ["spr_addresses","results",["addr_ip","sortcol","sortdir","offset","maxrows"]]
+        },
+        "brands": {
+            "get": ["spr_brands_get","row",["brand_id"]],
+            "search": ["spr_brands","results",["brand_account","brand_class","brand_type","brand_title","sortcol","sortdir","offset","maxrows"]]
+        },
+        "calls": {
+            "get": ["spr_calls_get","row",["call_id"]],
+            "search": ["spr_calls","results",["call_account","call_route","call_ip","call_date","sortcol","sortdir","offset","maxrows"]]
+        },
+        "categories": {
+            "get": ["spr_categories_get","row",["category_id"]],
+            "search": ["spr_categories","results",["category_segment","category_title","sortcol","sortdir","offset","maxrows"]]
+        },
+        "coins": {
+            "get": ["spr_coins_get","row",["coin_id"]],
+            "search": ["spr_coins","results",["coin_class","coin_code","coin_issuer","coin_domain","coin_name","coin_featured","sortcol","sortdir","offset","maxrows"]]
+        },
+        "contacts": {
+            "get": ["spr_contacts_get","row",["contact_id"]],
+            "search": ["spr_contacts","results",["contact_source","contact_target","contact_class","contact_type","contact_full","contact_email","contact_phone","sortcol","sortdir","offset","maxrows"]]
+        },
+        "coupons": {
+            "get": ["spr_coupons_get","row",["coupon_id"]],
+            "search": ["spr_coupons","results",["coupon_issuer","coupon_type","coupon_status","coupon_title","coupon_key","coupon_startson","coupon_endson","sortcol","sortdir","offset","maxrows"]]
+        },
+        "customers": {
+            "get": ["spr_customers_get","row",["customer_id"]],
+            "search": ["spr_customers","results",["customer_source","customer_full","customer_email","customer_phone","sortcol","sortdir","offset","maxrows"]]
+        },
+        "domains": {
+            "get": ["spr_domains_get","row",["domain_name"]],
+            "search": ["spr_domains","results",["domain_name","sortcol","sortdir","offset","maxrows"]]
+        },
+        "drops": {
+            "get": ["spr_drops_get","row",["drop_id"]],
+            "search": ["spr_drops","results",["drop_issuer","drop_coin","drop_status","drop_lastrunon","sortcol","sortdir","offset","maxrows"]]
+        },
+        "favorites": {
+            "get": ["spr_favorites_get","row",["contact_id"]],
+            "search": ["spr_favorites","results",["contact_source","contact_target","group_full","group_segment","group_zip","group_dist","group_featured","sortcol","sortdir","offset","maxrows"]]
+        },
+        "features": {
+            "get": ["spr_features_get","row",["feature_id"]],
+            "search": ["spr_features","results",["feature_section","feature_type","feature_title","feature_level","sortcol","sortdir","offset","maxrows"]]
+        },
+        "feedbacks": {
+            "get": ["spr_feedbacks_get","row",["fb_id"]],
+            "search": ["spr_feedbacks","results",["fb_peer","fb_member","fb_route","fb_reviewed","fb_createdon","sortcol","sortdir","offset","maxrows"]]
+        },
+        "groups": {
+            "get": ["spr_groups_get","row",["group_id"]],
+            "search": ["spr_groups","results",["group_type","group_segment","group_sponsor","group_manager","group_status","group_full","group_email","group_phone","group_zip","group_directory","group_dob","sortcol","sortdir","offset","maxrows"]]
+        },
+        "holders": {
+            "get": ["spr_holders_get","row",["holder_id"]],
+            "search": ["spr_holders","results",["holder_account","holder_coin","holder_pool","holder_balance","sortcol","sortdir","offset","maxrows"]]
+        },
+        "holidays": {
+            "get": ["spr_holidays_get","row",["holiday_id"]],
+            "search": ["spr_holidays","results",["holiday_name","holiday_private","holiday_start","sortcol","sortdir","offset","maxrows"]],
+            "current": ["spr_holidays_current","results",["holiday_date"]]
+        },
+        "invoices": {
+            "get": ["spr_invoices_get","row",["invoice_id"]],
+            "search": ["spr_invoices","results",["invoice_account","invoice_issuer","invoice_recipient","invoice_coupon","invoice_status","invoice_senton","invoice_dueon","sortcol","sortdir","offset","maxrows"]]
+        },
+        "issuers": {
+            "get": ["spr_issuers_get","row",["issuer_id"]],
+            "search": ["spr_issuers","results",["issuer_id","issuer_domain","sortcol","sortdir","offset","maxrows"]]
+        },
+        "lines": {
+            "get": ["spr_lines_get","row",["line_id"]],
+            "search": ["spr_lines","results",["line_invoice","line_type","line_key","sortcol","sortdir","offset","maxrows"]]
+        },
+        "messages": {
+            "get": ["spr_messages_get","row",["message_id"]],
+            "search": ["spr_messages","results",["message_sender","message_recipient","message_senton","sortcol","sortdir","offset","maxrows"]]
+        },
+        "notes": {
+            "get": ["spr_notes_get","row",["note_id"]],
+            "search": ["spr_notes","row",["note_ticket","note_class","note_type","note_addedby","sortcol","sortdir","offset","maxrows"]]
+        },
+        "offers": {
+            "get": ["spr_offers_get","row",["offer_id"]],
+            "search": ["spr_offers","results",["offer_coupon","offer_claimant","offer_redeemer","offer_claimedon","offer_redeemedon","sortcol","sortdir","offset","maxrows"]]
+        },
+        "operations": {
+            "get": ["spr_operations_get","row",["op_id"]],
+            "search": ["spr_operations","results",["op_account","op_recipient","op_action","op_type","op_coin","op_status","op_date","sortcol","sortdir","offset","maxrows"]]
+        },
+        "payouts": {
+            "get": ["spr_payouts_get","row",["payout_id"]],
+            "search": ["spr_payouts","results",["payout_drop","payout_account","payout_coin","payout_status","payout_date","sortcol","sortdir","offset","maxrows"]]
+        },
+        "peers": {
+            "get": ["spr_peers_get","row",["peer_name"]],
+            "search": ["spr_peers","results",["peer_name","peer_organization","sortcol","sortdir","offset","maxrows"]]
+        },
+        "pools": {
+            "get": ["spr_pools_get","row",["pool_id"]],
+            "search": ["spr_pools","results",["pool_coin","pool_counter","sortcol","sortdir","offset","maxrows"]]
+        },
+        "products": {
+            "get":	["spr_products_get","row",["product_id"]],
+            "search": ["spr_products","results",["product_account","product_class","product_type","product_status","product_number","product_title","product_brand","product_featured","sortcol","sortdir","offset","maxrows"]]
+        },
+        "promotions": {
+            "get": ["spr_promotions_get","row",["promo_id"]],
+            "search": ["spr_promotions","results",["promo_coupon","promo_product","sortcol","sortdir","offset","maxrows"]]
+        },
+        "segments": {
+            "get": ["spr_segments_get","row",["segment_id"]],
+            "search": ["spr_segments","results",["segment_title","sortcol","sortdir","offset","maxrows"]]
+        },
+        "templates": {
+            "get": ["spr_templates_get","row",["template_id"]],
+            "search": ["spr_templates","results",["template_holiday","template_name","sortcol","sortdir","offset","maxrows"]]
+        },
+        "tickets": {
+            "get": ["spr_tickets_get","row",["ticket_id"]],
+            "search": ["spr_tickets","results",["ticket_account","ticket_number","ticket_type","ticket_status","ticket_openedon","ticket_severity","sortcol","sortdir","offset","maxrows"]]
+        },
+        "visits": {
+            "get":	["spr_visits_get","row",["visit_id"]],
+            "search": ["spr_visits","results",["visit_peer","visit_ip","visit_date","sortcol","sortdir","offset","maxrows"]]
+        }
     },
     "routes": {
         "accounts_2fa": ["accounts_2fa","page","Two Factor Authentication","0"],

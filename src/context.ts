@@ -1,4 +1,6 @@
 import Base from './base';
+import AccountBean from './beans/account';
+import AccountInterface from './interfaces/account';
 import ErrorsBean from './beans/errors';
 import ErrorsInterface from './interfaces/errors';
 import FiltersBean from "./beans/filters";
@@ -65,6 +67,7 @@ class Context extends Base {
     svelte: {[key: string]: any}        = {};
     uploads: {[key: string]: any} 	    = {};   
 
+    account: AccountInterface           = new AccountBean();
     errors: ErrorsInterface             = new ErrorsBean();
     filters: FiltersInterface 		    = new FiltersBean();
     json: JsonInterface 			    = new JsonBean();
@@ -100,7 +103,7 @@ class Context extends Base {
             source:	this.root + this.ps + 'src',
             dist: this.root + this.ps + 'dist',
             logs: this.root + this.ps + 'logs',
-            templates: this.root + this.ps + 'src' + this.ps + 'templates',
+            templates: this.root + this.ps + 'templates',
             toml:this.root + this.ps + 'volume' + this.ps + 'toml',
             wasm: this.root + this.ps + 'volume' + this.ps + 'wasm',
             styles: this.root + this.ps + 'public' + this.ps + 'styles',
@@ -178,6 +181,18 @@ class Context extends Base {
 
     enableMaintenanceMode(): void { }
 
+    exportProps(): {[key: string]: any} {
+        return {
+            account: this.account,
+            errors: this.errors,
+            filters: this.filters,
+            params: this.params,
+            peer: this.peer,
+            query: this.query,
+            route: this.route,
+        };
+    }
+
     getProjectRoot(): string {
         let currentDir = process.cwd();
         while (!fs.existsSync(path.join(currentDir, 'node_modules'))) {
@@ -198,9 +213,9 @@ class Context extends Base {
 
     isRoute(name: string): boolean { let i = false; if(this.routes.hasProperty(name)) { i = true; } return i; }
     
-    loadConfig(): void {
-        const j = this.readFile(this.peer.config);
-        const d =  JSON.parse(j);
+    async loadConfig(): Promise<void> {
+        const j = await this.readFile(this.peer.config);
+        const d =  JSON.parse(j.toString());
         const b = new Base(d);
         if(b.hasProperty('apollo')) { this.apollo = b.apollo; }
         if(b.hasProperty('astro')) { this.astro = b.astro; }

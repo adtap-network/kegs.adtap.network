@@ -30,6 +30,8 @@ export default interface ErrorsInterface extends BaseInterface {
 
     incrementCounter(): void;
 
+    logException(e: Error, file: string, func: string, type: string, dump: boolean): void;
+
     nextError(): {[key: string]: string};
 
     previousError(): {[key: string]: string};
