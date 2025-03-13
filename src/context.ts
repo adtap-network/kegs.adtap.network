@@ -15,6 +15,7 @@ import EndPoint from "./endpoint";
 import EndPointInterface from "./interfaces/endpoint";
 import path from 'path';
 import fs from 'fs';
+import { Request } from "express";
 
 class Context extends Base {
 
@@ -57,6 +58,8 @@ class Context extends Base {
     procs: {[key: string]: any} 	    = {};
     routes: {[key: string]: any}        = {};
     services: {[key: string]: any}      = {};
+    scripts: {[key: string]: any}       = {};
+    styles: {[key: string]: any}        = {};
     svelte: {[key: string]: any}        = {};
     uploads: {[key: string]: any} 	    = {};   
 
@@ -101,6 +104,9 @@ class Context extends Base {
             fonts: this.root + this.ps + 'public' + this.ps + 'fonts',
             images: this.root + this.ps + 'public' + this.ps + 'images'
         };
+
+        this.errors.setSettings({filename: this.reference + '.log',directory: this.peer.logs,filepath: this.peer.logs + this.ps + this.reference + '.log'});
+
         this.astro = {
             routes: {
                 home: '/home',
@@ -138,7 +144,22 @@ class Context extends Base {
                 stores: path.join(this.root, 'src', 'stores')
             },
             hydrate: true,
-        };
+        };        
+    }
+
+    createSection(a: string[]): {[key: string]: any} {
+        let o = {"name": "", "alias": "", "parent": "", "title": "", "icon": "", "path": "", "local": "", "foreign": ""};
+        if(a.length == 8) {
+            o.name = a[0];
+            o.alias = a[1];
+            o.parent = a[2];
+            o.title = a[3];
+            o.icon = a[4];
+            o.path = a[5];
+            o.local = a[6];
+            o.foreign = a[7];
+        }
+        return o;
     }
 
     disableMaintenanceMode(): void { }
@@ -165,5 +186,10 @@ class Context extends Base {
 
     isRoute(name: string): boolean { let i = false; if(this.routes.hasProperty(name)) { i = true; } return i; }
     
+    mergeRequest(req: Request): void {
+        this.params.setParams(req); 
+        
+    }
+
 }
 export default Context;

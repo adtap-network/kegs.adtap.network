@@ -36,4 +36,6 @@ export default interface ErrorsInterface extends BaseInterface {
 
     resetCounter(): void;
 
+    setSettings(settings: {[key: string]: string}): void;
+
 }

@@ -16,3 +16,4 @@ node_modules/*
 *.pptx
 *.mp4
 *.gz
+adtap.kegs.json

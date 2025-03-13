@@ -1,5 +1,6 @@
 import BaseInterface from './base';
 import FiltersInterface from '../interfaces/filters';
+import { Request } from "express";
 
 export default interface ParamsInterface extends BaseInterface {
     
@@ -22,5 +23,7 @@ export default interface ParamsInterface extends BaseInterface {
         keywords: string; 
         logout: boolean; 
         crypt: string;
+
+        setParams(req: Request): void;
 
 } 

@@ -17,6 +17,27 @@ import Service from './service'; export { Service };
 import Setting from './setting'; export { Setting };
 import Template from './template'; export { Template };
 
+export const CoreClasses = {
+    adapter: Adapter,
+    agent: Agent,
+    base: Base,
+    broker: Broker,
+    coin: Coin,
+    columns: Columns,
+    context: Context,
+    controller: Controller,
+    endpoint: EndPoint,
+    extendeddate: ExtendedDate,
+    fault: Fault,
+    model: Model,
+    module: Module,
+    route: Route,
+    row: Row,
+    service: Service,
+    setting: Setting,
+    template: Template
+};
+
 /** beans */
 import AccountBean from './beans/account'; export { AccountBean };
 import AnalyticBean from './beans/analytic'; export { AnalyticBean };
@@ -36,6 +57,27 @@ import ParamsBean from './beans/params'; export { ParamsBean };
 import QueryBean from './beans/query'; export { QueryBean };
 import ShareBean from './beans/share'; export { ShareBean };
 import TradeBean from './beans/trade'; export { TradeBean };
+
+export const BeanClasses = {
+    account: AccountBean,
+    analytic: AnalyticBean,
+    analytics: AnalyticsBean,
+    bid: BidBean,
+    book: BookBean,
+    chart: ChartBean,
+    claimable: ClaimableBean,
+    errors: ErrorsBean,
+    extensions: ExtensionsBean,
+    filters: FiltersBean,
+    json: JsonBean,
+    layout: LayoutBean,
+    message: MessageBean,
+    mimes: MimesBean,
+    params: ParamsBean,
+    query: QueryBean,
+    share: ShareBean,
+    trade: TradeBean
+};
 
 /** columns */
 import AccountActivitiesColumns from './columns/account-activities'; export { AccountActivitiesColumns };
@@ -92,6 +134,10 @@ import TicketsColumns from './columns/tickets'; export { TicketsColumns };
 import TimezonesColumns from './columns/timezones'; export { TimezonesColumns };
 import ZipcodesColumns from './columns/zipcodes'; export { ZipcodesColumns };
 
+export const ColumnClasses = {
+
+};
+
 /** models */
 import AccountActivitiesModel from './models/account-activities'; export { AccountActivitiesModel };
 import AccountBalancesModel from './models/account-balances'; export { AccountBalancesModel };
@@ -146,6 +192,15 @@ import TicketNotesModel from './models/ticket-notes'; export { TicketNotesModel 
 import TicketsModel from './models/tickets'; export { TicketsModel };
 import TimezonesModel from './models/timezones'; export { TimezonesModel };
 import ZipCodesModel from './models/zipcodes'; export { ZipCodesModel };
+
+export const ModelClasses = {
+
+};
+
+/** modules */
+export const ModuleClasses = {
+
+};
 
 /** rows  */
 import AccountActivityRow from './rows/account-activity'; export { AccountActivityRow };
@@ -202,6 +257,10 @@ import TicketRow from './rows/ticket'; export { TicketRow };
 import TimezoneRow from './rows/timezone'; export { TimezoneRow };
 import ZipCodeRow from './rows/zipcode'; export { ZipCodeRow };
 
+export const RowClasses = {
+
+};
+
 /** schemas */
 import { AccountActivitiesSchema, AccountActivitiesType } from './schemas/account-activities'; export { AccountActivitiesSchema, AccountActivitiesType };
 import { AccountBalancesSchema, AccountBalancesType } from './schemas/account-balances'; export { AccountBalancesSchema, AccountBalancesType };
@@ -254,3 +313,17 @@ import { TicketNotesSchema, TicketNotesType } from './schemas/ticket-notes'; exp
 import { TicketsSchema, TicketsType } from './schemas/tickets'; export { TicketsSchema, TicketsType };
 import { TimezonesSchema, TimezonesType } from './schemas/timezones'; export { TimezonesSchema, TimezonesType };
 import { ZipcodesSchema, ZipcodesType } from './schemas/zipcodes'; export { ZipcodesSchema, ZipcodesType};
+
+export const SchemasAndTypes = {
+
+};
+
+/** services */
+export const ServiceClasses = {
+
+};
+
+/** views */
+export const ViewClasses = {
+
+};

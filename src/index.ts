@@ -1,3 +1,4 @@
 import { Controller } from './exports';
 
-const c = new Controller().process();
+const c = new Controller();
+c.process();

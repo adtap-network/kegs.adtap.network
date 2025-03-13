@@ -1,12 +1,12 @@
 import BaseInterface from './base';
 import ErrorsInterface from './errors';
 import FiltersInterface from "./filters";
-import IntervalsInterface from '../interfaces/intervals';
 import JsonInterface from "./json";
 import MessageInterface from "./message";
 import ParamsInterface from "./params";
 import RouteInterface from "./route";
 import EndPointInterface from "./endpoint";
+import { Request } from "express";
 
 export default interface ContextInterface extends BaseInterface {
 
@@ -59,4 +59,24 @@ export default interface ContextInterface extends BaseInterface {
     params: ParamsInterface;
     route: RouteInterface;
     endpoint: EndPointInterface;
+
+    createSection(a: string[]): {[key: string]: any};
+
+    disableMaintenanceMode(): void;
+    
+    enableMaintenanceMode(): void;
+
+    getProjectFolder(): string;
+
+    getProjectRoot(): string;
+
+    isEndPoint(name: string): boolean;
+
+    isMaintenanceMode(): boolean;
+
+    isRoute(name: string): boolean;
+
+    mergeRequest(req: Request): void;
+
+    mergeSection(): void;
 }

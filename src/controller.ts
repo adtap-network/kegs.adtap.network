@@ -7,6 +7,7 @@ export default class Controller extends Base {
 
     context: ContextInterface;
     domain: string = '';
+    port: number = 3000;
 
     constructor(domain: string = 'adtap.network') {
         super();
@@ -16,25 +17,28 @@ export default class Controller extends Base {
 
     process(): void {
         const app = express();
-        app.use((req, res, next) => {
-             this.handleRequest(req, res, next);
+        app.use('/:view/:action', (req: Request, res: Response) => {
+            this.context.mergeRequest(req);
+
+
+            const { view, action } = req.params;
+            const ViewClass = viewClasses[view.toLowerCase()];
+        
+            if (ViewClass) {
+                const instance = new ViewClass();
+                const methodName = `render${action.charAt(0).toUpperCase() + action.slice(1)}`;
+        
+                if (typeof instance[methodName] === 'function') {
+                    return instance[methodName](req, res);
+                }
+            }
+        
+            res.status(404).send('Page Not Found');
         });
 
-        const PORT = 3000;
-        app.listen(PORT, () => {
-            console.log(`Server running on http://localhost:${PORT}`);
+        app.listen(this.port, () => {
+            console.log(`Server running on http://localhost:${this.port}`);
         });
-    }
-
-    private handleRequest(req: Request, res: Response, next: NextFunction): void {
-        // Example: Delegate requests based on route
-        if (req.path.startsWith('/api')) {
-            // Pass to an API service
-            res.json({ message: "API route hit!" });
-        } else {
-            // Fallback handler
-            res.send("Welcome to AdTap Network!");
-        }
     }
 
 }
