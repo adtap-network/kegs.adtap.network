@@ -1,42 +1,5 @@
-import Adapter from './adapter'; export { Adapter };
-import Agent from './agent'; export { Agent };
-import Base from './base'; export { Base };
-import Broker from './broker'; export { Broker };
-import Coin from './coin'; export { Coin };
-import Columns from './columns'; export { Columns };
-import Context from './context'; export { Context };
-import Controller from './controller'; export { Controller };
-import EndPoint from './endpoint'; export { EndPoint };
-import ExtendedDate from './date'; export { ExtendedDate };
-import Fault from './fault'; export { Fault };
-import Model from './model'; export { Model };
-import Module from './broker'; export { Module };
-import Route from './route'; export { Route };
-import Row from './row'; export { Row };
-import Service from './service'; export { Service };
-import Setting from './setting'; export { Setting };
-import Template from './template'; export { Template };
-
-export const CoreClasses: {[key: string]: any} = {
-    adapter: Adapter,
-    agent: Agent,
-    base: Base,
-    broker: Broker,
-    coin: Coin,
-    columns: Columns,
-    context: Context,
-    controller: Controller,
-    endpoint: EndPoint,
-    extendeddate: ExtendedDate,
-    fault: Fault,
-    model: Model,
-    module: Module,
-    route: Route,
-    row: Row,
-    service: Service,
-    setting: Setting,
-    template: Template
-};
+import { Adapter, Agent, Base, Broker, Coin, Columns, Context, Controller, EndPoint, ExtendedDate, Fault, Model, Module, Route, Row, Service, Setting, Template, CoreClasses } from './exports/core';
+export { Adapter, Agent, Base, Broker, Coin, Columns, Context, Controller, EndPoint, ExtendedDate, Fault, Model, Module, Route, Row, Service, Setting, Template, CoreClasses };
 
 /** beans */
 import AccountBean from './beans/account'; export { AccountBean };
@@ -157,6 +120,7 @@ import MailerInterface from './interfaces/mailer'; export { MailerInterface };
 import MessageInterface from './interfaces/message'; export { MessageInterface };
 import ModelInterface from './interfaces/model'; export { ModelInterface };
 import ParamsInterface from './interfaces/params'; export { ParamsInterface };
+import QueryInterface from './interfaces/query'; export { QueryInterface };
 import RouteInterface from './interfaces/route'; export { RouteInterface };
 import RowInterface from './interfaces/row'; export { RowInterface };
 import SchemaInterface from './interfaces/schema'; export { SchemaInterface };
@@ -286,68 +250,119 @@ export const RowClasses: {[key: string]: any} = {
 };
 
 /** schemas */
-import { AccountActivitiesSchema, AccountActivitiesType } from './schemas/account-activities'; export { AccountActivitiesSchema, AccountActivitiesType };
-import { AccountBalancesSchema, AccountBalancesType } from './schemas/account-balances'; export { AccountBalancesSchema, AccountBalancesType };
-import { AccountContactsSchema, AccountContactsType } from './schemas/account-contacts'; export { AccountContactsSchema, AccountContactsType };
-import { AccountFieldsSchema, AccountFieldsType } from './schemas/account-fields'; export { AccountFieldsSchema, AccountFieldsType };
-import { AccountInvitationsSchema, AccountInvitationsType } from './schemas/account-invitations'; export { AccountInvitationsSchema, AccountInvitationsType };
-import { AccountIssuersSchema, AccountIssuersType } from './schemas/account-issuers'; export { AccountIssuersSchema, AccountIssuersType };
-import { AccountOptionsSchema, AccountOptionsType } from './schemas/account-options'; export { AccountOptionsSchema, AccountOptionsType };
-import { AccountPermsSchema, AccountPermsType } from './schemas/account-perms'; export { AccountPermsSchema, AccountPermsType };
-import { AccountRewardsSchema, AccountRewardsType } from './schemas/account-rewards'; export { AccountRewardsSchema, AccountRewardsType };
-import { AccountTypesSchema, AccountTypesType } from './schemas/account-types'; export { AccountTypesSchema, AccountTypesType };
-import { AccountValuesSchema, AccountValuesType } from './schemas/account-values'; export { AccountValuesSchema, AccountValuesType };
-import { AccountsSchema, AccountsType } from './schemas/accounts'; export { AccountsSchema, AccountsType };
-import { CategoriesSchema, CategoriesType } from './schemas/categories'; export { CategoriesSchema, CategoriesType };
-import { CategoryFieldsSchema, CategoryFieldsType } from './schemas/category-fields'; export { CategoryFieldsSchema, CategoryFieldsType };
-import { CategoryOptionsSchema, CategoryOptionsType } from './schemas/category-options'; export { CategoryOptionsSchema, CategoryOptionsType };
-import { CategoryValuesSchema, CategoryValuesType } from './schemas/category-values'; export { CategoryValuesSchema, CategoryValuesType };
-import { CoinsSchema, CoinsType } from './schemas/coins'; export { CoinsSchema, CoinsType };
-import { CountriesSchema, CountriesType } from './schemas/countries'; export { CountriesSchema, CountriesType };
-import { EntriesSchema, EntriesType } from './schemas/entries'; export { EntriesSchema, EntriesType };
-import { EntryCategoriesSchema, EntryCategoriesType } from './schemas/entry-categories'; export { EntryCategoriesSchema, EntryCategoriesType };
-import { EntryCommentsSchema, EntryCommentsType } from './schemas/entry-comments'; export { EntryCommentsSchema, EntryCommentsType };
-import { EntryFavoritesSchema, EntryFavoritesType } from './schemas/entry-favorites'; export { EntryFavoritesSchema, EntryFavoritesType };
-import { EntryFieldsSchema, EntryFieldsType } from './schemas/entry-fields'; export { EntryFieldsSchema, EntryFieldsType };
-import { EntryFilesSchema, EntryFilesType } from './schemas/entry-files'; export { EntryFilesSchema, EntryFilesType };
-import { EntryKeywordsSchema, EntryKeywordsType } from './schemas/entry-keywords'; export { EntryKeywordsSchema, EntryKeywordsType };
-import { EntryOptionsSchema, EntryOptionsType } from './schemas/entry-options'; export { EntryOptionsSchema, EntryOptionsType };
-import { EntryValuesSchema, EntryValuesType } from './schemas/entry-values'; export { EntryValuesSchema, EntryValuesType };
-import { EntryViewsSchema, EntryViewsType } from './schemas/entry-views'; export { EntryViewsSchema, EntryViewsType };
-import { InvoiceLinesSchema, InvoiceLinesType } from './schemas/invoice-lines'; export { InvoiceLinesSchema, InvoiceLinesType };
-import { InvoiceNoticesSchema, InvoiceNoticesType } from './schemas/invoice-notices'; export { InvoiceNoticesSchema, InvoiceNoticesType };
-import { InvoicePaymentsSchema, InvoicePaymentsType } from './schemas/invoice-payments'; export { InvoicePaymentsSchema, InvoicePaymentsType };
-import { InvoicesSchema, InvoicesType } from './schemas/invoices'; export { InvoicesSchema, InvoicesType };
-import { LanguagesSchema, LanguagesType } from './schemas/languages'; export { LanguagesSchema, LanguagesType };
-import { MessageAttachmentsSchema, MessageAttachmentsType } from './schemas/message-attachments'; export { MessageAttachmentsSchema, MessageAttachmentsType };
-import { MessagesSchema, MessagesType } from './schemas/messages'; export { MessagesSchema, MessagesType };
-import { OfferCategoriesSchema, OfferCategoriesType } from './schemas/offer-categories'; export { OfferCategoriesSchema, OfferCategoriesType };
-import { OfferKeywordsSchema, OfferKeywordsType } from './schemas/offer-keywords'; export { OfferKeywordsSchema, OfferKeywordsType };
-import { OfferOptionsSchema, OfferOptionsType } from './schemas/offer-options'; export { OfferOptionsSchema, OfferOptionsType };
-import { OfferPricesSchema, OfferPricesType } from './schemas/offer-prices'; export { OfferPricesSchema, OfferPricesType };
-import { OfferReviewsSchema, OfferReviewsType } from './schemas/offer-reviews'; export { OfferReviewsSchema, OfferReviewsType };
-import { OfferValuesSchema, OfferValuesType } from './schemas/offer-values'; export { OfferValuesSchema, OfferValuesType };
-import { OfferViewsSchema, OfferViewsType } from './schemas/offer-views'; export { OfferViewsSchema, OfferViewsType };
-import { OffersSchema, OffersType } from './schemas/offers'; export { OffersSchema, OffersType };
-import { QuoteHistoriesSchema, QuoteHistoriesType } from './schemas/quote-histories'; export { QuoteHistoriesSchema, QuoteHistoriesType };
-import { QuotesSchema, QuotesType } from './schemas/quotes'; export { QuotesSchema, QuotesType };
-import { RolesSchema, RolesType } from './schemas/roles'; export { RolesSchema, RolesType };
-import { TicketFilesSchema, TicketFilesType } from './schemas/ticket-files'; export { TicketFilesSchema, TicketFilesType };
-import { TicketNotesSchema, TicketNotesType } from './schemas/ticket-notes'; export { TicketNotesSchema, TicketNotesType };
-import { TicketsSchema, TicketsType } from './schemas/tickets'; export { TicketsSchema, TicketsType };
-import { TimezonesSchema, TimezonesType } from './schemas/timezones'; export { TimezonesSchema, TimezonesType };
-import { ZipcodesSchema, ZipcodesType } from './schemas/zipcodes'; export { ZipcodesSchema, ZipcodesType};
-
-export const SchemasAndTypes: {[key: string]: any} = {
-
+import { 
+    AccountActivitiesSchema, AccountActivitiesType, 
+    AccountBalancesSchema, AccountBalancesType, 
+    AccountContactsSchema, AccountContactsType,
+    AccountFieldsSchema, AccountFieldsType,
+    AccountInvitationsSchema, AccountInvitationsType,
+    AccountIssuersSchema, AccountIssuersType,
+    AccountOptionsSchema, AccountOptionsType,
+    AccountPermsSchema, AccountPermsType,
+    AccountRewardsSchema, AccountRewardsType,
+    AccountTypesSchema, AccountTypesType,
+    AccountValuesSchema, AccountValuesType,
+    AccountsSchema, AccountsType,
+    CategoriesSchema, CategoriesType,
+    CategoryFieldsSchema, CategoryFieldsType,
+    CategoryOptionsSchema, CategoryOptionsType,
+    CategoryValuesSchema, CategoryValuesType,
+    CoinsSchema, CoinsType,
+    CountriesSchema, CountriesType,
+    EntriesSchema, EntriesType,
+    EntryCategoriesSchema, EntryCategoriesType,
+    EntryCommentsSchema, EntryCommentsType,
+    EntryFavoritesSchema, EntryFavoritesType,
+    EntryFieldsSchema, EntryFieldsType,
+    EntryFilesSchema, EntryFilesType,
+    EntryKeywordsSchema, EntryKeywordsType,
+    EntryOptionsSchema, EntryOptionsType,
+    EntryValuesSchema, EntryValuesType,
+    EntryViewsSchema, EntryViewsType,
+    InvoiceLinesSchema, InvoiceLinesType,
+    InvoiceNoticesSchema, InvoiceNoticesType,
+    InvoicePaymentsSchema, InvoicePaymentsType,
+    InvoicesSchema, InvoicesType,
+    LanguagesSchema, LanguagesType,
+    MessageAttachmentsSchema, MessageAttachmentsType,
+    MessagesSchema, MessagesType,
+    OfferCategoriesSchema, OfferCategoriesType,
+    OfferKeywordsSchema, OfferKeywordsType,
+    OfferOptionsSchema, OfferOptionsType,
+    OfferPricesSchema, OfferPricesType,
+    OfferReviewsSchema, OfferReviewsType,
+    OfferValuesSchema, OfferValuesType,
+    OfferViewsSchema, OfferViewsType,
+    OffersSchema, OffersType,
+    QuoteHistoriesSchema, QuoteHistoriesType,
+    QuotesSchema, QuotesType,
+    RolesSchema, RolesType,
+    TicketFilesSchema, TicketFilesType,
+    TicketNotesSchema, TicketNotesType,
+    TicketsSchema, TicketsType,
+    TimezonesSchema, TimezonesType,
+    ZipcodesSchema, ZipcodesType,
+    SchemasAndTypes 
+} from './exports/schemas';
+export { 
+    AccountActivitiesSchema, AccountActivitiesType, 
+    AccountBalancesSchema, AccountBalancesType, 
+    AccountContactsSchema, AccountContactsType,
+    AccountFieldsSchema, AccountFieldsType,
+    AccountInvitationsSchema, AccountInvitationsType,
+    AccountIssuersSchema, AccountIssuersType,
+    AccountOptionsSchema, AccountOptionsType,
+    AccountPermsSchema, AccountPermsType,
+    AccountRewardsSchema, AccountRewardsType,
+    AccountTypesSchema, AccountTypesType,
+    AccountValuesSchema, AccountValuesType,
+    AccountsSchema, AccountsType,
+    CategoriesSchema, CategoriesType,
+    CategoryFieldsSchema, CategoryFieldsType,
+    CategoryOptionsSchema, CategoryOptionsType,
+    CategoryValuesSchema, CategoryValuesType,
+    CoinsSchema, CoinsType,
+    CountriesSchema, CountriesType,
+    EntriesSchema, EntriesType,
+    EntryCategoriesSchema, EntryCategoriesType,
+    EntryCommentsSchema, EntryCommentsType,
+    EntryFavoritesSchema, EntryFavoritesType,
+    EntryFieldsSchema, EntryFieldsType,
+    EntryFilesSchema, EntryFilesType,
+    EntryKeywordsSchema, EntryKeywordsType,
+    EntryOptionsSchema, EntryOptionsType,
+    EntryValuesSchema, EntryValuesType,
+    EntryViewsSchema, EntryViewsType,
+    InvoiceLinesSchema, InvoiceLinesType,
+    InvoiceNoticesSchema, InvoiceNoticesType,
+    InvoicePaymentsSchema, InvoicePaymentsType,
+    InvoicesSchema, InvoicesType,
+    LanguagesSchema, LanguagesType,
+    MessageAttachmentsSchema, MessageAttachmentsType,
+    MessagesSchema, MessagesType,
+    OfferCategoriesSchema, OfferCategoriesType,
+    OfferKeywordsSchema, OfferKeywordsType,
+    OfferOptionsSchema, OfferOptionsType,
+    OfferPricesSchema, OfferPricesType,
+    OfferReviewsSchema, OfferReviewsType,
+    OfferValuesSchema, OfferValuesType,
+    OfferViewsSchema, OfferViewsType,
+    OffersSchema, OffersType,
+    QuoteHistoriesSchema, QuoteHistoriesType,
+    QuotesSchema, QuotesType,
+    RolesSchema, RolesType,
+    TicketFilesSchema, TicketFilesType,
+    TicketNotesSchema, TicketNotesType,
+    TicketsSchema, TicketsType,
+    TimezonesSchema, TimezonesType,
+    ZipcodesSchema, ZipcodesType,
+    SchemasAndTypes 
 };
 
 /** services */
-export const ServiceClasses: {[key: string]: any} = {
-
-};
+import { ServiceClasses } from './exports/services';
+export { ServiceClasses };
 
 /** views */
-export const ViewClasses: {[key: string]: any} = {
-
-};
+import { ViewClasses } from './exports/views';
+export { ViewClasses }

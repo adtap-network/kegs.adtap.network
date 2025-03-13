@@ -6,6 +6,7 @@ import MessageInterface from "./message";
 import ParamsInterface from "./params";
 import RouteInterface from "./route";
 import EndPointInterface from "./endpoint";
+import QueryInterface from './query';
 import { Request } from "express";
 
 export default interface ContextInterface extends BaseInterface {
@@ -59,6 +60,7 @@ export default interface ContextInterface extends BaseInterface {
     params: ParamsInterface;
     route: RouteInterface;
     endpoint: EndPointInterface;
+    query: QueryInterface;
 
     createColumn(a: string[]): {[key: string]: any};
 

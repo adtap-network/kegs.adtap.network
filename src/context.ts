@@ -11,6 +11,8 @@ import ParamsBean from "./beans/params";
 import ParamsInterface from "./interfaces/params";
 import Route from "./route";
 import RouteInterface from "./interfaces/route";
+import QueryBean from './beans/query';
+import QueryInterface from './interfaces/query';
 import EndPoint from "./endpoint";
 import EndPointInterface from "./interfaces/endpoint";
 import path from 'path';
@@ -70,6 +72,7 @@ class Context extends Base {
     params: ParamsInterface 		    = new ParamsBean();
     route: RouteInterface               = new Route();
     endpoint: EndPointInterface         = new EndPoint();
+    query: QueryInterface               = new QueryBean();
 
     constructor(domain: string) { 
         super();

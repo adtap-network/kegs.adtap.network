@@ -1,4 +1,7 @@
-import { Base, Context, ContextInterface, ViewClasses } from './exports';
+import Base from './base';
+import Context from './context';
+import ContextInterface from './interfaces/context';
+import { ViewClasses } from './exports/views';
 import express, { Request, Response } from "express";
 
 export default class Controller extends Base {
