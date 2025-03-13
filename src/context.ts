@@ -53,7 +53,7 @@ class Context extends Base {
     endpoints: {[key: string]: any}     = {};
     feathers: {[key: string]: any}      = {};
     intervals: {[key: string]: any} 	= {};
-    mailers: {[key: string]: any} 	    = {};
+    mailer: {[key: string]: any} 	    = {};
     peer: {[key: string]: any}          = {};
     procs: {[key: string]: any} 	    = {};
     routes: {[key: string]: any}        = {};
@@ -89,7 +89,7 @@ class Context extends Base {
             ip: this.ip,
             domain: this.domain,
             url: this.url,
-            root: this.url,
+            root: this.root,
             federation: this.federation,
             webroot: this.root,
             htdocs:	this.root + this.ps + 'public' + this.ps + this.reference,
@@ -102,7 +102,8 @@ class Context extends Base {
             wasm: this.root + this.ps + 'volume' + this.ps + 'wasm',
             styles: this.root + this.ps + 'public' + this.ps + 'styles',
             fonts: this.root + this.ps + 'public' + this.ps + 'fonts',
-            images: this.root + this.ps + 'public' + this.ps + 'images'
+            images: this.root + this.ps + 'public' + this.ps + 'images',
+            config: this.root + this.ps + 'adtap.kegs.json'
         };
 
         this.errors.setSettings({filename: this.reference + '.log',directory: this.peer.logs,filepath: this.peer.logs + this.ps + this.reference + '.log'});
@@ -194,17 +195,47 @@ class Context extends Base {
 
     isRoute(name: string): boolean { let i = false; if(this.routes.hasProperty(name)) { i = true; } return i; }
     
+    loadConfig(): void {
+        const j = this.readFile(this.peer.config);
+        const d =  JSON.parse(j);
+        const b = new Base(d);
+        if(b.hasProperty('apollo')) { this.apollo = b.apollo; }
+        if(b.hasProperty('astro')) { this.astro = b.astro; }
+        if(b.hasProperty('blocks')) { this.blocks = b.blocks; }
+        if(b.hasProperty('datasource')) { this.datasource = b.datasource; }
+        if(b.hasProperty('endpoints')) { this.endpoints = b.endpoints; }
+        if(b.hasProperty('feathers')) { this.feathers = b.feathers; }
+        if(b.hasProperty('intervals')) { this.intervals = b.intervals; }
+        if(b.hasProperty('mailer')) { this.mailer = b.mailer; }
+        if(b.hasProperty('procs')) { this.procs = b.procs; }
+        if(b.hasProperty('routes')) { this.routes = b.routes; }
+        if(b.hasProperty('sections')) { this.sections = b.sections; }  
+    }
+
     mergeEndPoint(req: Request): void { }
 
     mergeRequest(req: Request): void {
         this.params.setParams(req); 
-        
+        this.mergeRoute(req);
+        this.mergeSection(req);
     }
 
-    mergeRoute(req: Request): void { }
+    mergeRoute(req: Request): void { 
+        const { view, action } = req.params;
+        const r = view + '_' + action;
+        if(this.routes[r]) {
+            this.route = this.routes[r];
+        }
+        else if(this.route.hasProperty('home_unknown')) {
+            this.route = this.routes.home_unknown;
+        }
+    }
 
-    mergeSection(): void {
-
+    mergeSection(req: Request): void {
+        const { view } = req.params;
+        if(this.sections[view]) {
+            this.section = this.sections[view];
+        }
     }
 }
 export default Context;

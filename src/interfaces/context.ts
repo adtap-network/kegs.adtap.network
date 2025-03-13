@@ -44,7 +44,7 @@ export default interface ContextInterface extends BaseInterface {
     endpoints: {[key: string]: any};
     feathers: {[key: string]: any};
     intervals: {[key: string]: any};
-    mailers: {[key: string]: any};
+    mailer: {[key: string]: any};
     peer: {[key: string]: any};
     procs: {[key: string]: any};
     routes: {[key: string]: any};
@@ -90,5 +90,5 @@ export default interface ContextInterface extends BaseInterface {
 
     mergeRoute(req: Request): void;
 
-    mergeSection(): void;
+    mergeSection(req: Request): void;
 }
