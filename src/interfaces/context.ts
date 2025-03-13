@@ -60,6 +60,14 @@ export default interface ContextInterface extends BaseInterface {
     route: RouteInterface;
     endpoint: EndPointInterface;
 
+    createColumn(a: string[]): {[key: string]: any};
+
+    createEndPoint(a: string[]): {[key: string]: any};
+
+    createField(a: string[]): {[key: string]: any};
+
+    createRoute(a: string[]): {[key: string]: any};
+
     createSection(a: string[]): {[key: string]: any};
 
     disableMaintenanceMode(): void;
@@ -76,7 +84,11 @@ export default interface ContextInterface extends BaseInterface {
 
     isRoute(name: string): boolean;
 
+    mergeEndPoint(req: Request): void;
+
     mergeRequest(req: Request): void;
+
+    mergeRoute(req: Request): void;
 
     mergeSection(): void;
 }

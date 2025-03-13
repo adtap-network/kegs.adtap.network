@@ -147,6 +147,14 @@ class Context extends Base {
         };        
     }
 
+    createColumn(a: string[]): {[key: string]: any} { return {}; }
+
+    createEndPoint(a: string[]): {[key: string]: any} { return {}; }
+
+    createField(a: string[]): {[key: string]: any} { return {}; }
+
+    createRoute(a: string[]): {[key: string]: any} { return {}; }
+
     createSection(a: string[]): {[key: string]: any} {
         let o = {"name": "", "alias": "", "parent": "", "title": "", "icon": "", "path": "", "local": "", "foreign": ""};
         if(a.length == 8) {
@@ -186,10 +194,17 @@ class Context extends Base {
 
     isRoute(name: string): boolean { let i = false; if(this.routes.hasProperty(name)) { i = true; } return i; }
     
+    mergeEndPoint(req: Request): void { }
+
     mergeRequest(req: Request): void {
         this.params.setParams(req); 
         
     }
 
+    mergeRoute(req: Request): void { }
+
+    mergeSection(): void {
+
+    }
 }
 export default Context;

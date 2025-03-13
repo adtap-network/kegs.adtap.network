@@ -17,7 +17,7 @@ import Service from './service'; export { Service };
 import Setting from './setting'; export { Setting };
 import Template from './template'; export { Template };
 
-export const CoreClasses = {
+export const CoreClasses: {[key: string]: any} = {
     adapter: Adapter,
     agent: Agent,
     base: Base,
@@ -58,7 +58,7 @@ import QueryBean from './beans/query'; export { QueryBean };
 import ShareBean from './beans/share'; export { ShareBean };
 import TradeBean from './beans/trade'; export { TradeBean };
 
-export const BeanClasses = {
+export const BeanClasses: {[key: string]: any} = {
     account: AccountBean,
     analytic: AnalyticBean,
     analytics: AnalyticsBean,
@@ -134,9 +134,33 @@ import TicketsColumns from './columns/tickets'; export { TicketsColumns };
 import TimezonesColumns from './columns/timezones'; export { TimezonesColumns };
 import ZipcodesColumns from './columns/zipcodes'; export { ZipcodesColumns };
 
-export const ColumnClasses = {
+export const ColumnClasses: {[key: string]: any} = {
 
 };
+
+/** interfaces */
+import AccountInterface from './interfaces/account'; export { AccountInterface };
+import AdapterInterface from './interfaces/adapter'; export { AdapterInterface };
+import AgentInterface from './interfaces/agent'; export { AgentInterface };
+import BaseInterface from './interfaces/base'; export { BaseInterface };
+import CoinInterface from './interfaces/coin'; export { CoinInterface };
+import ColumnsInterface from './interfaces/columns'; export { ColumnsInterface };
+import ContextInterface from './interfaces/context'; export { ContextInterface };
+import DatasourceInterface from './interfaces/datasource'; export { DatasourceInterface };
+import EndPointInterface from './interfaces/endpoint'; export { EndPointInterface };
+import ErrorsInterface from './interfaces/errors'; export { ErrorsInterface };
+import FaultInterface from './interfaces/fault'; export { FaultInterface };
+import FiltersInterface from './interfaces/filters'; export { FiltersInterface };
+import IntervalsInterface from './interfaces/intervals'; export { IntervalsInterface };
+import JsonInterface from './interfaces/json'; export { JsonInterface };
+import MailerInterface from './interfaces/mailer'; export { MailerInterface };
+import MessageInterface from './interfaces/message'; export { MessageInterface };
+import ModelInterface from './interfaces/model'; export { ModelInterface };
+import ParamsInterface from './interfaces/params'; export { ParamsInterface };
+import RouteInterface from './interfaces/route'; export { RouteInterface };
+import RowInterface from './interfaces/row'; export { RowInterface };
+import SchemaInterface from './interfaces/schema'; export { SchemaInterface };
+import ServiceInterface from './interfaces/service'; export { ServiceInterface };
 
 /** models */
 import AccountActivitiesModel from './models/account-activities'; export { AccountActivitiesModel };
@@ -193,12 +217,12 @@ import TicketsModel from './models/tickets'; export { TicketsModel };
 import TimezonesModel from './models/timezones'; export { TimezonesModel };
 import ZipCodesModel from './models/zipcodes'; export { ZipCodesModel };
 
-export const ModelClasses = {
+export const ModelClasses: {[key: string]: any} = {
 
 };
 
 /** modules */
-export const ModuleClasses = {
+export const ModuleClasses: {[key: string]: any} = {
 
 };
 
@@ -257,7 +281,7 @@ import TicketRow from './rows/ticket'; export { TicketRow };
 import TimezoneRow from './rows/timezone'; export { TimezoneRow };
 import ZipCodeRow from './rows/zipcode'; export { ZipCodeRow };
 
-export const RowClasses = {
+export const RowClasses: {[key: string]: any} = {
 
 };
 
@@ -314,16 +338,16 @@ import { TicketsSchema, TicketsType } from './schemas/tickets'; export { Tickets
 import { TimezonesSchema, TimezonesType } from './schemas/timezones'; export { TimezonesSchema, TimezonesType };
 import { ZipcodesSchema, ZipcodesType } from './schemas/zipcodes'; export { ZipcodesSchema, ZipcodesType};
 
-export const SchemasAndTypes = {
+export const SchemasAndTypes: {[key: string]: any} = {
 
 };
 
 /** services */
-export const ServiceClasses = {
+export const ServiceClasses: {[key: string]: any} = {
 
 };
 
 /** views */
-export const ViewClasses = {
+export const ViewClasses: {[key: string]: any} = {
 
 };

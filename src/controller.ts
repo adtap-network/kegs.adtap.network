@@ -1,7 +1,5 @@
-import Base from './base';
-import Context from './context';
-import ContextInterface from './interfaces/context';
-import express, { Request, Response, NextFunction } from "express";
+import { Base, Context, ContextInterface, ViewClasses } from './exports';
+import express, { Request, Response } from "express";
 
 export default class Controller extends Base {
 
@@ -22,7 +20,7 @@ export default class Controller extends Base {
 
 
             const { view, action } = req.params;
-            const ViewClass = viewClasses[view.toLowerCase()];
+            const ViewClass = ViewClasses[view.toLowerCase()];
         
             if (ViewClass) {
                 const instance = new ViewClass();
