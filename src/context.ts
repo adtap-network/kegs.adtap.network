@@ -17,6 +17,8 @@ import QueryBean from './beans/query';
 import QueryInterface from './interfaces/query';
 import EndPoint from "./endpoint";
 import EndPointInterface from "./interfaces/endpoint";
+import Row from "./row";
+import RowInterface from "./interfaces/row";
 import path from 'path';
 import fs from 'fs';
 import { Request } from "express";
@@ -76,6 +78,7 @@ class Context extends Base {
     route: RouteInterface               = new Route();
     endpoint: EndPointInterface         = new EndPoint();
     query: QueryInterface               = new QueryBean();
+    row: RowInterface                   = new Row({});
 
     constructor(domain: string) { 
         super();

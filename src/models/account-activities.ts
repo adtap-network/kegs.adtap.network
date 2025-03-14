@@ -2,6 +2,7 @@ import Model from '../model';
 import ModelInterface from '../interfaces/model';
 import { AccountActivitiesSchema } from '../schemas/account-activities';
 import AccountActivitiesCols from '../columns/account-activities';
+import AccountActivityRow from '../rows/account-activity';
 
 class AccountActivitiesModel extends Model implements ModelInterface {
 
@@ -11,7 +12,8 @@ class AccountActivitiesModel extends Model implements ModelInterface {
             '',
             'a',
             AccountActivitiesSchema,
-            new AccountActivitiesCols()
+            new AccountActivitiesCols(),
+            new AccountActivityRow({})
         );
     }
     

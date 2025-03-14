@@ -25,7 +25,7 @@ export default class ParamsBean extends Base {
     logout: boolean                 = false; 
     crypt: string                   = '';
 
-    constructor() { super({}); }
+    constructor(o: {[key: string]: any} = {}) { super(); this.mergeProperties(o); }
 
     setParams(req: Request): void {
         let gs = Object.keys(req.query);

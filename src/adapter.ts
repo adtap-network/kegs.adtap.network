@@ -3,6 +3,9 @@ import BaseInterface from './interfaces/base';
 import ModelInterface from './interfaces/model';
 import ParamsInterface from './interfaces/params';
 import DatasourceInterface from './interfaces/datasource';
+import Row from './row';
+import RowInterface from './interfaces/row';
+import ParamsBean from './beans/params';
 
 class Adapter extends Base {
 
@@ -95,11 +98,21 @@ class Adapter extends Base {
 
     getResults(q: string) { return {}; }
 
-    getRow(i: string) { let k = this.model.cols.primary; return this.getObjectByParams({[k]: i}); }
+    getRow(i: string): RowInterface { 
+        let k = this.model.cols.primary;
+        let p = new ParamsBean({[k]: i});
+        return this.getRowByParams(p); 
+    }
 
-    getRowByKey(k: string, v: string) { return this.getObjectByParams({[k]: v}); }
+    getRowByKey(k: string, v: string): RowInterface { 
+        let p = new ParamsBean({[k]: v})
+        return this.getRowByParams(p); 
+    }
 
-    getRowByParams(p: ParamsInterface) { return {}; }
+    getRowByParams(p: ParamsInterface): RowInterface {
+        
+        return this.model.row;
+    }
 
     getSaveAction(r: ParamsInterface) { return ''; }
 

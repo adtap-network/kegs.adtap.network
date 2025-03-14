@@ -13,9 +13,7 @@ export default class Route extends Base {
 
     constructor() { super({}); }
 
-
     getLevel(): number { return this.level; }
-
 
     setLevel(level: number): void { this.level = level; }
 

@@ -6,6 +6,7 @@ import BaseInterface from './interfaces/base';
 import ContextInterface from './interfaces/context';
 import MysqlAdapter from "./adapters/my";
 import PgAdapter from "./adapters/pg";
+import RowInterface from "./interfaces/row";
 
 export default class Service extends Base {
 
@@ -21,13 +22,13 @@ export default class Service extends Base {
 
     deleteRecord(id: string) {  let r = this.adapter.getRow(id); this.adapter.deleteRow(id); return r; }
 
-    getRecord(id: string) { return this.adapter.getRow(id); }
+    getRecord(id: string): RowInterface { return this.adapter.getRow(id); }
 
     listRecords() { return this.adapter.listRows(); }
 
     listRecordsByParams(params: object) { return this.adapter.listRowsByParams(params); }
 
-    newRecord(params: BaseInterface) { return this.adapter.newRecord(params); }
+    newRecord(params: BaseInterface): RowInterface { return this.adapter.newRecord(params); }
 
     saveRecord(params: object) { let i = this.adapter.saveRow(params); let r = this.adapter.getRow(i); return r; }
 
